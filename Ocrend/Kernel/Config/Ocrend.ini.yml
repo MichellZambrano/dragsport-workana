@@ -21,11 +21,11 @@ database:
       
 # Configuración de servidor SMTP
 mailer:
-  host: 
-  user: 
-  pass: 
-  port: 587
-  logo:
+  host: smtp.gmail.com
+  user: noreply.dev.ocrend.software@gmail.com
+  pass: ZZROX1A2-*R/T7AX7T
+  port: 587 
+  logo: https://waipay.io/assets/waipay/logo/logomail.png
 
 # Configuración de twig
 twig:

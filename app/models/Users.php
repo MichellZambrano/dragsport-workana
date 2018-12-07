@@ -517,18 +517,18 @@ class Users extends Models implements IModels {
             
             # Campo lleno
             if (Helper\Functions::emp($email)) {
-                throw new ModelsException('El campo email debe estar lleno.');
+                throw new ModelsException('The email is required.');
             }
 
             # Filtro
             $email = $this->db->scape($email);
 
             # Obtener información del usuario 
-            $user_data = $this->db->select('id_user,name', 'users', null, "email='$email'", 1);
+            $user_data = $this->db->select('id_user,CONCAT(first_name, " ", last_name) as name', 'users', null, "email='$email'", 1);
 
             # Verificar correo en base de datos 
             if (false === $user_data) {
-                throw new ModelsException('El email no está registrado en el sistema.');
+                throw new ModelsException('The email is not registered in the system.');
             }
 
             # Generar token y contraseña 
@@ -537,17 +537,17 @@ class Users extends Models implements IModels {
             $link = $config['build']['url'] . 'lostpass?token='.$token.'&user='.$user_data[0]['id_user'];
 
             # Construir mensaje y enviar mensaje
-            $HTML = 'Hola <b>'. $user_data[0]['name'] .'</b>, ha solicitado recuperar su contraseña perdida, si no ha realizado esta acción no necesita hacer nada.
+            $HTML = 'hello <b>'. $user_data[0]['name'] .'</b>, you have requested to recover your lost password, if you have not done this action you do not need to do anything.
 					<br />
 					<br />
-					Para cambiar su contraseña por <b>'. $pass .'</b> haga <a href="'. $link .'" target="_blank">clic aquí</a> o en el botón de recuperar.';
+					To change your password to <b>'. $pass .'</b>, <a href="'. $link .'" target="_blank">click here</a> or on the recover button.';
 
             # Enviar el correo electrónico
             $dest = array();
 			$dest[$email] = $user_data[0]['name'];
             $email_send = Helper\Emails::send($dest,array(
                 # Título del mensaje
-                '{{title}}' => 'Recuperar contraseña de ' . $config['build']['name'],
+                '{{title}}' => 'Recover password from ' . $config['build']['name'],
                 # Url de logo
                 '{{url_logo}}' => $config['build']['url'],
                 # Logo
@@ -557,14 +557,14 @@ class Users extends Models implements IModels {
                 # Url del botón
                 '{{btn-href}}' => $link,
                 # Texto del boton
-                '{{btn-name}}' => 'Recuperar Contraseña',
+                '{{btn-name}}' => 'Recover password',
                 # Copyright
-                '{{copyright}}' => '&copy; '.date('Y') .' <a href="'.$config['build']['url'].'">'.$config['build']['name'].'</a> - Todos los derechos reservados.'
+                '{{copyright}}' => '&copy; '.date('Y') .' <a href="'.$config['build']['url'].'">'.$config['build']['name'].'</a> - All rights reserved.'
               ),0);
 
             # Verificar si hubo algún problema con el envío del correo
             if(false === $email_send) {
-                throw new ModelsException('No se ha podido enviar el correo electrónico.');
+                throw new ModelsException('The email could not be sent.');
             }
 
             # Actualizar datos 
@@ -574,7 +574,7 @@ class Users extends Models implements IModels {
                 'token' => $token
             ),"id_user='$id_user'",1);
 
-            return array('success' => 1, 'message' => 'Se ha enviado un enlace a su correo electrónico.');
+            return array('success' => 1, 'message' => 'A link to your email has been sent.');
         } catch(ModelsException $e) {
             return array('success' => 0, 'message' => $e->getMessage());
         }

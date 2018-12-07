@@ -16,7 +16,7 @@
 						Remember Me
 					</label>
 				</div>
-				<a href="#" class="forgot">Forgot my Password</a>
+				<a href="javascript:void(0)" data-toggle="modal" data-target="#lostpass" class="forgot">Forgot my Password</a>
 			</div>
 			<button type="submit" id="login_btn" class="btn btn-lg btn-primary full-width">Login</button>
 			<div class="or"></div>
@@ -27,3 +27,32 @@
 		</div>
 	</div>
 </form>
+
+
+<div class="modal-mx">
+	<div class="modal fade" id="lostpass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		    <form class="modal-content" role="form" id="lostpass_form">
+			    <div class="modal-header">
+			        <h5 class="modal-title" id="exampleModalCenterTitle">Lost your password?</h5>
+			        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			          	<span aria-hidden="true">&times;</span>
+			        </button>
+			    </div>
+			    <div class="modal-body">
+					<div class="row">
+						<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+							<div class="form-group label-floating is-empty">
+								<label class="control-label">Your Email</label>
+								<input class="form-control" placeholder="" type="email" name="email">
+							</div>
+						</div>
+					</div>
+			    </div>
+			    <div class="modal-footer">
+			        <button type="submit" class="btn btn-lg btn-primary full-width" id="lostpass_btn">Recover password</button>
+			    </div>
+		    </form>
+		</div>
+	</div>
+</div>
