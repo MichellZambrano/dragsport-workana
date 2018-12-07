@@ -307,9 +307,10 @@ class Users extends Models implements IModels {
             $email = strtolower($http->request->get('email'));
             $pass = $http->request->get('pass');
 
+
             # Verificar que no están vacíos
             if (Helper\Functions::e($email, $pass)) {
-                throw new ModelsException('Credenciales incompletas.');
+                throw new ModelsException('Incomplete credentials.');
             }
             
             # Añadir intentos
@@ -320,10 +321,10 @@ class Users extends Models implements IModels {
 
             # Autentificar
             if ($this->authentication($email, $pass)) {
-                return array('success' => 1, 'message' => 'Conectado con éxito.');
+                return array('success' => 1, 'message' => 'Connected successfully.');
             }
             
-            throw new ModelsException('Credenciales incorrectas.');
+            throw new ModelsException('Bad credentials.');
 
         } catch (ModelsException $e) {
             return array('success' => 0, 'message' => $e->getMessage());

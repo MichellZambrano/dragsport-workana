@@ -1,0 +1,49 @@
+<form class="content" id="register_form" role="form">
+	<div class="row">
+		<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+			<div class="form-group label-floating is-empty">
+				<label class="control-label">First Name</label>
+				<input class="form-control" placeholder="" type="text" name="first_name">
+			</div>
+		</div>
+		<div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
+			<div class="form-group label-floating is-empty">
+				<label class="control-label">Last Name</label>
+				<input class="form-control" placeholder="" type="text" name="last_name">
+			</div>
+		</div>
+		<div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+			<div class="form-group label-floating is-empty">
+				<label class="control-label">Your Email</label>
+				<input class="form-control" placeholder="" type="email" name="email">
+			</div>
+			<div class="form-group label-floating is-empty">
+				<label class="control-label">Your Password</label>
+				<input class="form-control" placeholder="" type="password" name="pass">
+			</div>
+			<div class="form-group date-time-picker label-floating">
+				<label class="control-label">Your Birthday</label>
+				<input name="datetimepicker" value="{{ "now"|date('d/m/Y') }}" />
+				<span class="input-group-addon">
+					<svg class="olymp-calendar-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+				</span>
+			</div>
+			<div class="form-group label-floating is-select">
+				<label class="control-label">Your Gender</label>
+				<select class="selectpicker form-control" name="gender">
+					<option value="male">Male</option>
+					<option value="female">Female</option>
+				</select>
+			</div>
+			<div class="remember">
+				<div class="checkbox">
+					<label>
+						<input name="optionsCheckboxes" type="checkbox" name="tyc">
+						I accept the <a href="javascript:void(0)">Terms and Conditions</a> of the website
+					</label>
+				</div>
+			</div>
+			<button type="submit" id="register_btn" class="btn btn-purple btn-lg full-width">Complete Registration!</button>
+		</div>
+	</div>
+</form>
