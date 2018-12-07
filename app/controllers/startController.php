@@ -26,7 +26,6 @@ class startController extends Controllers implements IControllers {
         parent::__construct($router,array(
             'users_not_logged' => true
         ));
-        global $config;
         
 		$this->template->display('start/start', array(
 			'm' => $router->getMethod()

@@ -290,6 +290,116 @@ class Users extends Models implements IModels {
            
         throw new \RuntimeException('The user is not logged in.');
     }
+    /**
+     * Trae el id de un usuario registrado con facebook
+     * 
+     * @param $fbId : Id del user de facebook
+     * 
+     * @return array|false
+     */
+    private function getFbUserById($fbId){
+        $fbId = $this->db->scape($fbId);
+        return $this->db->select('id_user', 'users', null, "social_id = '$fbId'", 1);
+    }
+    /**
+     * Registra un usuario con facebook
+     * 
+     * @param array $user : Datos del usuario
+     * 
+     * @return id del usuario en forma de matriz $array[0]['id_user']
+     */
+    private function registerFB($user){
+        # Verificar email 
+        $this->checkEmail($user['email']);
+
+        # Verificar fecha de nacimiento
+        $this->checkDate($user['datetimepicker']);
+
+        # Verificar género
+        if (!in_array($user['gender'], ['female', 'male'])) {
+             throw new ModelsException('You must choose a gender.');
+        }
+        
+        # Registrar al usuario
+        $id_user = $this->db->insert('users', array(
+            'first_name' => $user['first_name'],
+            'last_name' => $user['last_name'],
+            'email' => $user['email'],
+            'pass' => Helper\Strings::hash( uniqid() ),
+            'birthdate' => strtotime( str_replace('/', '-', $user['datetimepicker'])),
+            'gender' => $user['gender'],
+            'social_id' => $user['id'],
+            'created_at' => time()
+        ));
+
+        # Datos a devolver
+        return array(
+            array(
+                'id_user' => $id_user
+            )
+        );
+    }
+    /**
+     * Valida si un usuario está registrado o no.
+     * si no está registrado lo registra e inicia sesión | inicia sesión
+     * 
+     * @param array $user : Datos del usuaio
+     * 
+     * @return void
+     */
+    private function checkFbUser($user){
+        # Datos de la vista
+        $id = $user['id'];
+        $first_name = $user['first_name'];
+        $last_name = $user['last_name'];
+        $email = $user['email'];
+        $birthdate = $user['datetimepicker'];
+        $gender = $user['gender'];
+
+        # Id del usuario
+        $id_user = $this->getFbUserById($id);
+        
+        # Validar existencia del usuario
+        if (false == $id_user) {
+            $id_user = $this->registerFB($user);
+        }
+
+        # Iniciar sesión
+        $this->generateSession(array(
+            'id_user' => $id_user[0]['id_user']
+        ));
+    }
+    /**
+     * Logea a un usuario con facebook
+     * 
+     * @return array
+     */
+    public function loginFB() : array{
+        try {
+            global $http;
+            # Usuario de facebook
+            $user = $this->getFbUserById($http->request->get('id'));
+            # Evaluar si existe fecha de nacimiento y genero
+            if (false == $user && Helper\Functions::e($http->request->get('datetimepicker'),$http->request->get('gender'))) {
+                 return array('nextStep' => true);
+            }
+            # En caso de no existir el usuario pero si la fecha y el género
+            else if (false == $user) {
+                # Validar usuario
+                $this->checkFbUser($http->request->all());
+            }else{
+                 # Iniciar sesión
+                $this->generateSession(array(
+                    'id_user' => $user[0]['id_user']
+                ));
+
+            }
+
+            return array('success' => 1, 'message' => 'Connected successfully.');
+        } catch (ModelsException $e) {
+            return array('success' => 0, 'message' => $e->getMessage());
+        }
+    }
 
      /**
      * Realiza la acción de login dentro del sistema

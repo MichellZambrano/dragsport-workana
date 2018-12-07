@@ -4,3 +4,10 @@
 .bg-twitch{
 	background-color: #4B367C;
 }
+.modal-mx .close{
+	margin: 0;
+	padding: 0;
+}
+.modal-mx .btn{
+	margin-bottom: 0;
+}

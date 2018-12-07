@@ -1,0 +1,695 @@
+<?php
+
+/* start/start.twig */
+class __TwigTemplate_9e13f50b5d9146fa9085b836f64a400b92cba16ad341492102792b1b1e9af68e extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+\t";
+        // line 4
+        echo $this->env->getExtension('Ocrend\Kernel\Helpers\Functions')->base_assets();
+        echo "
+\t<title>";
+        // line 5
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->getSourceContext(), twig_get_attribute($this->env, $this->getSourceContext(), ($context["config"] ?? null), "build", array()), "name", array()), "html", null, true);
+        echo "</title>
+
+\t";
+        // line 8
+        echo "\t<meta charset=\"utf-8\">
+\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\t<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">
+
+\t";
+        // line 13
+        echo "\t<script src=\"assets/dragsport/js/webfontloader.min.js\"></script>
+
+\t<script>
+\t\tWebFont.load({
+\t\t\tgoogle: {
+\t\t\t\tfamilies: ['Roboto:300,400,500,700:latin']
+\t\t\t}
+\t\t});
+\t</script>
+
+\t";
+        // line 24
+        echo "\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-reboot.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-grid.css\">
+
+\t";
+        // line 29
+        echo "\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/main.min.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/fonts.min.css\">
+
+\t";
+        // line 33
+        echo "\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/vendor/noty/noty.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/vendor/noty/themes/metroui.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/vendor/ladda/ladda-themeless.min.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/dragsport.css\">
+
+</head>
+
+<body class=\"landing-page\">
+
+<div class=\"content-bg-wrap\"></div>
+
+
+";
+        // line 46
+        echo "
+<div class=\"header--standard header--standard-landing\" id=\"header--standard\">
+\t<div class=\"container\">
+\t\t<div class=\"header--standard-wrap\">
+
+\t\t\t<a href=\"#\" class=\"logo\">
+\t\t\t\t<div class=\"img-wrap\">
+\t\t\t\t\t<img src=\"assets/dragsport/logo/logo oficial black.png\" alt=\"dragsport\">
+\t\t\t\t\t";
+        // line 56
+        echo "\t\t\t\t</div>
+\t\t\t\t";
+        // line 61
+        echo "\t\t\t</a>
+
+\t\t\t<a href=\"#\" class=\"open-responsive-menu js-open-responsive-menu\">
+\t\t\t\t<svg class=\"olymp-menu-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-menu-icon\"></use></svg>
+\t\t\t</a>
+
+\t\t\t<div class=\"nav nav-pills nav1 header-menu\">
+\t\t\t\t<div class=\"mCustomScrollbar\">
+\t\t\t\t\t<ul>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Home</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item dropdown\">
+\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" data-hover=\"dropdown\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"false\" aria-expanded=\"false\" tabindex='1'>Profile</a>
+\t\t\t\t\t\t\t<div class=\"dropdown-menu\">
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Newsfeed</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Post Versions</a>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item dropdown dropdown-has-megamenu\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link dropdown-toggle\" data-hover=\"dropdown\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"false\" aria-expanded=\"false\" tabindex='1'>Forums</a>
+\t\t\t\t\t\t\t<div class=\"dropdown-menu megamenu\">
+\t\t\t\t\t\t\t\t<div class=\"row\">
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">Main Links</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page<span class=\"tag-label bg-blue-light\">new</span></a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">BuddyPress</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page<span class=\"tag-label bg-primary\">HOT!</span></a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">Corporate</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">Forums</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Terms & Conditions</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Events</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Privacy Policy</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"close-responsive-menu js-close-responsive-menu\">
+\t\t\t\t\t\t\t<svg class=\"olymp-close-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon\"></use></svg>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item js-expanded-menu\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">
+\t\t\t\t\t\t\t\t<svg class=\"olymp-menu-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-menu-icon\"></use></svg>
+\t\t\t\t\t\t\t\t<svg class=\"olymp-close-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon\"></use></svg>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t
+\t\t\t\t\t</ul>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+</div>
+
+";
+        // line 151
+        echo "<div class=\"header-spacer--standard\"></div>
+
+<div class=\"container\">
+\t<div class=\"row display-flex\">
+\t\t<div class=\"col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12\">
+\t\t\t<div class=\"landing-content\">
+\t\t\t\t<h1>Welcome to the Sport Social Network in the World</h1>
+\t\t\t\t<p>We are the best and biggest social network with 5 billion active users all around the world. Share you
+\t\t\t\t\tthoughts, write blog posts, show your favourite music via Stopify, earn badges and much more!
+\t\t\t\t</p>
+\t\t\t\t<a href=\"#\" class=\"btn btn-md btn-border c-white\">Register Now!</a>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<div class=\"col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12\">
+\t\t\t
+\t\t\t";
+        // line 168
+        echo "\t\t\t
+\t\t\t<div class=\"registration-login-form\">
+\t\t\t\t";
+        // line 171
+        echo "\t\t\t\t<ul class=\"nav nav-tabs\" role=\"tablist\">
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link ";
+        // line 173
+        if ((($context["m"] ?? null) != "login")) {
+            echo "active";
+        }
+        echo "\" data-toggle=\"tab\" href=\"#home\" role=\"tab\">
+\t\t\t\t\t\t\t<svg class=\"olymp-login-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-login-icon\"></use></svg>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link ";
+        // line 178
+        if ((($context["m"] ?? null) == "login")) {
+            echo "active";
+        }
+        echo "\" data-toggle=\"tab\" href=\"#profile\" role=\"tab\">
+\t\t\t\t\t\t\t<svg class=\"olymp-register-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-register-icon\"></use></svg>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t
+\t\t\t\t";
+        // line 185
+        echo "\t\t\t\t<div class=\"tab-content\">
+\t\t\t\t\t<div class=\"tab-pane ";
+        // line 186
+        if ((($context["m"] ?? null) != "login")) {
+            echo "active";
+        }
+        echo "\" id=\"home\" role=\"tabpanel\" data-mh=\"log-tab\">
+\t\t\t\t\t\t<div class=\"title h6\">Register to Dragsports</div>
+\t\t\t\t\t\t";
+        // line 188
+        $this->loadTemplate("start/register", "start/start.twig", 188)->display($context);
+        // line 189
+        echo "\t\t\t\t\t</div>
+\t\t\t
+\t\t\t\t\t<div class=\"tab-pane ";
+        // line 191
+        if ((($context["m"] ?? null) == "login")) {
+            echo "active";
+        }
+        echo "\" id=\"profile\" role=\"tabpanel\" data-mh=\"log-tab\">
+\t\t\t\t\t\t<div class=\"title h6\">Login to your Account</div>
+\t\t\t\t\t\t";
+        // line 193
+        $this->loadTemplate("start/login", "start/start.twig", 193)->display($context);
+        // line 194
+        echo "\t\t\t\t\t\t<!-- Button trigger modal -->
+\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">
+\t\t\t\t\t\t  Launch demo modal
+\t\t\t\t\t\t</button>
+
+\t\t\t\t\t\t<div class=\"modal-mx\">
+\t\t\t\t\t\t\t<div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">
+\t\t\t\t\t\t\t\t<div class=\"modal-dialog modal-dialog-centered\" role=\"document\">
+\t\t\t\t\t\t\t\t    <form class=\"modal-content modal-sm\" id=\"continue_form\">
+\t\t\t\t\t\t\t\t\t    <div class=\"modal-header\">
+\t\t\t\t\t\t\t\t\t        <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Only one more step!</h5>
+\t\t\t\t\t\t\t\t\t        ";
+        // line 205
+        echo "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+\t\t\t\t\t\t\t\t\t          \t<span aria-hidden=\"true\">&times;</span>
+\t\t\t\t\t\t\t\t\t        </button>
+\t\t\t\t\t\t\t\t\t \t</div>
+\t\t\t\t\t\t\t\t      \t<div class=\"modal-body\">
+\t\t\t\t\t\t\t\t      \t\t<div class=\"row\">
+\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group date-time-picker label-floating\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthday</label>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input name=\"datetimepicker\" value=\"";
+        // line 215
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, $this->env->getExtension('Ocrend\Kernel\Helpers\Functions')->timestamp(), "d/m/Y"), "html", null, true);
+        echo "\" />
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-calendar-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-calendar-icon\"></use></svg>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Gender</label>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\" name=\"gender\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"male\">Male</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"female\">Female</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t      \t</div>
+\t\t\t\t\t\t\t\t\t    <div class=\"modal-footer\">
+\t\t\t\t\t\t\t\t\t\t    <button type=\"button\" class=\"btn btn-purple btn-lg full-width\" id=\"continue_btn\">Continue</button>
+\t\t\t\t\t\t\t\t\t    </div>
+\t\t\t\t\t\t\t\t    </form>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t
+
+
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t
+\t\t\t";
+        // line 244
+        echo "\t\t</div>
+\t</div>
+</div>
+
+
+";
+        // line 250
+        echo "<script src=\"assets/dragsport/js/jquery-3.2.1.js\"></script>
+<script src=\"assets/dragsport/js/jquery.appear.js\"></script>
+<script src=\"assets/dragsport/js/jquery.mousewheel.js\"></script>
+<script src=\"assets/dragsport/js/perfect-scrollbar.js\"></script>
+<script src=\"assets/dragsport/js/jquery.matchHeight.js\"></script>
+<script src=\"assets/dragsport/js/svgxuse.js\"></script>
+<script src=\"assets/dragsport/js/imagesloaded.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/Headroom.js\"></script>
+<script src=\"assets/dragsport/js/velocity.js\"></script>
+<script src=\"assets/dragsport/js/ScrollMagic.js\"></script>
+<script src=\"assets/dragsport/js/jquery.waypoints.js\"></script>
+<script src=\"assets/dragsport/js/jquery.countTo.js\"></script>
+<script src=\"assets/dragsport/js/popper.min.js\"></script>
+<script src=\"assets/dragsport/js/material.min.js\"></script>
+<script src=\"assets/dragsport/js/bootstrap-select.js\"></script>
+<script src=\"assets/dragsport/js/smooth-scroll.js\"></script>
+<script src=\"assets/dragsport/js/selectize.js\"></script>
+<script src=\"assets/dragsport/js/swiper.jquery.js\"></script>
+<script src=\"assets/dragsport/js/moment.js\"></script>
+<script src=\"assets/dragsport/js/daterangepicker.js\"></script>
+<script src=\"assets/dragsport/js/simplecalendar.js\"></script>
+<script src=\"assets/dragsport/js/fullcalendar.js\"></script>
+<script src=\"assets/dragsport/js/isotope.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/ajax-pagination.js\"></script>
+<script src=\"assets/dragsport/js/Chart.js\"></script>
+<script src=\"assets/dragsport/js/chartjs-plugin-deferred.js\"></script>
+<script src=\"assets/dragsport/js/circle-progress.js\"></script>
+<script src=\"assets/dragsport/js/loader.js\"></script>
+<script src=\"assets/dragsport/js/run-chart.js\"></script>
+<script src=\"assets/dragsport/js/jquery.magnific-popup.js\"></script>
+<script src=\"assets/dragsport/js/jquery.gifplayer.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-and-player.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-playlist-plugin.min.js\"></script>
+
+<script defer src=\"assets/dragsport/fonts/fontawesome-all.js\"></script>
+
+<script src=\"assets/dragsport/Bootstrap/dist/js/bootstrap.bundle.js\"></script>
+<script src=\"assets/dragsport/js/base-init.js\"></script>
+
+";
+        // line 290
+        echo "<script src=\"assets/dragsport/vendor/mojs/mo.min.js\"></script>
+<script src=\"assets/dragsport/vendor/noty/noty.min.js\"></script>
+<script src=\"assets/dragsport/vendor/ladda/spin.min.js\"></script>
+<script src=\"assets/dragsport/vendor/ladda/ladda.min.js\"></script>
+<script src=\"assets/jscontrollers/overall/alerts.js\"></script>
+
+";
+        // line 297
+        echo "<script src=\"assets/jscontrollers/start/register.js\"></script>
+<script src=\"assets/jscontrollers/start/login.js\"></script>
+<script src=\"assets/jscontrollers/start/FBlogin.js\"></script>
+
+
+</body>
+</html>";
+    }
+
+    public function getTemplateName()
+    {
+        return "start/start.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  365 => 297,  357 => 290,  316 => 250,  309 => 244,  277 => 215,  265 => 205,  252 => 194,  250 => 193,  243 => 191,  239 => 189,  237 => 188,  230 => 186,  227 => 185,  216 => 178,  206 => 173,  202 => 171,  198 => 168,  180 => 151,  89 => 61,  86 => 56,  76 => 46,  62 => 33,  57 => 29,  51 => 24,  39 => 13,  33 => 8,  28 => 5,  24 => 4,  19 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+\t{{ base_assets()|raw }}
+\t<title>{{ config.build.name }}</title>
+
+\t{# Required meta tags always come first #}
+\t<meta charset=\"utf-8\">
+\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+\t<meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">
+
+\t{# Main Font #}
+\t<script src=\"assets/dragsport/js/webfontloader.min.js\"></script>
+
+\t<script>
+\t\tWebFont.load({
+\t\t\tgoogle: {
+\t\t\t\tfamilies: ['Roboto:300,400,500,700:latin']
+\t\t\t}
+\t\t});
+\t</script>
+
+\t{# Bootstrap CSS #}
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-reboot.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-grid.css\">
+
+\t{# Main Styles CSS #}
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/main.min.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/fonts.min.css\">
+
+\t{# Extra #}
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/vendor/noty/noty.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/vendor/noty/themes/metroui.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/vendor/ladda/ladda-themeless.min.css\">
+\t<link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/dragsport.css\">
+
+</head>
+
+<body class=\"landing-page\">
+
+<div class=\"content-bg-wrap\"></div>
+
+
+{# Header Standard Landing #}
+
+<div class=\"header--standard header--standard-landing\" id=\"header--standard\">
+\t<div class=\"container\">
+\t\t<div class=\"header--standard-wrap\">
+
+\t\t\t<a href=\"#\" class=\"logo\">
+\t\t\t\t<div class=\"img-wrap\">
+\t\t\t\t\t<img src=\"assets/dragsport/logo/logo oficial black.png\" alt=\"dragsport\">
+\t\t\t\t\t{#  <img src=\"assets/dragsport/img/logo.png\" alt=\"Olympus\">
+\t\t\t\t\t<img src=\"assets/dragsport/img/logo-colored-small.png\" alt=\"Olympus\" class=\"logo-colored\">#}
+\t\t\t\t</div>
+\t\t\t\t{# <div class=\"title-block\">
+\t\t\t\t\t<h6 class=\"logo-title\">olympus</h6>
+\t\t\t\t\t<div class=\"sub-title\">SOCIAL NETWORK</div>
+\t\t\t\t</div> #}
+\t\t\t</a>
+
+\t\t\t<a href=\"#\" class=\"open-responsive-menu js-open-responsive-menu\">
+\t\t\t\t<svg class=\"olymp-menu-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-menu-icon\"></use></svg>
+\t\t\t</a>
+
+\t\t\t<div class=\"nav nav-pills nav1 header-menu\">
+\t\t\t\t<div class=\"mCustomScrollbar\">
+\t\t\t\t\t<ul>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Home</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item dropdown\">
+\t\t\t\t\t\t\t<a class=\"nav-link dropdown-toggle\" data-hover=\"dropdown\" data-toggle=\"dropdown\" href=\"#\" role=\"button\" aria-haspopup=\"false\" aria-expanded=\"false\" tabindex='1'>Profile</a>
+\t\t\t\t\t\t\t<div class=\"dropdown-menu\">
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Newsfeed</a>
+\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Post Versions</a>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item dropdown dropdown-has-megamenu\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link dropdown-toggle\" data-hover=\"dropdown\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"false\" aria-expanded=\"false\" tabindex='1'>Forums</a>
+\t\t\t\t\t\t\t<div class=\"dropdown-menu megamenu\">
+\t\t\t\t\t\t\t\t<div class=\"row\">
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">Main Links</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page<span class=\"tag-label bg-blue-light\">new</span></a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">BuddyPress</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page<span class=\"tag-label bg-primary\">HOT!</span></a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">Corporate</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t<div class=\"col col-sm-3\">
+\t\t\t\t\t\t\t\t\t\t<h6 class=\"column-tittle\">Forums</h6>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t\t<a class=\"dropdown-item\" href=\"#\">Profile Page</a>
+\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Terms & Conditions</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Events</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">Privacy Policy</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"close-responsive-menu js-close-responsive-menu\">
+\t\t\t\t\t\t\t<svg class=\"olymp-close-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon\"></use></svg>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t<li class=\"nav-item js-expanded-menu\">
+\t\t\t\t\t\t\t<a href=\"#\" class=\"nav-link\">
+\t\t\t\t\t\t\t\t<svg class=\"olymp-menu-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-menu-icon\"></use></svg>
+\t\t\t\t\t\t\t\t<svg class=\"olymp-close-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon\"></use></svg>
+\t\t\t\t\t\t\t</a>
+\t\t\t\t\t\t</li>
+\t\t\t\t\t\t
+\t\t\t\t\t</ul>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+</div>
+
+{# ... end Header Standard Landing #}
+<div class=\"header-spacer--standard\"></div>
+
+<div class=\"container\">
+\t<div class=\"row display-flex\">
+\t\t<div class=\"col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12\">
+\t\t\t<div class=\"landing-content\">
+\t\t\t\t<h1>Welcome to the Sport Social Network in the World</h1>
+\t\t\t\t<p>We are the best and biggest social network with 5 billion active users all around the world. Share you
+\t\t\t\t\tthoughts, write blog posts, show your favourite music via Stopify, earn badges and much more!
+\t\t\t\t</p>
+\t\t\t\t<a href=\"#\" class=\"btn btn-md btn-border c-white\">Register Now!</a>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<div class=\"col col-xl-5 col-lg-6 col-md-12 col-sm-12 col-12\">
+\t\t\t
+\t\t\t{# Login-Registration Form #}
+\t\t\t
+\t\t\t<div class=\"registration-login-form\">
+\t\t\t\t{# Nav tabs #}
+\t\t\t\t<ul class=\"nav nav-tabs\" role=\"tablist\">
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link {% if m != 'login' %}active{% endif %}\" data-toggle=\"tab\" href=\"#home\" role=\"tab\">
+\t\t\t\t\t\t\t<svg class=\"olymp-login-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-login-icon\"></use></svg>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t\t<li class=\"nav-item\">
+\t\t\t\t\t\t<a class=\"nav-link {% if m == 'login' %}active{% endif %}\" data-toggle=\"tab\" href=\"#profile\" role=\"tab\">
+\t\t\t\t\t\t\t<svg class=\"olymp-register-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-register-icon\"></use></svg>
+\t\t\t\t\t\t</a>
+\t\t\t\t\t</li>
+\t\t\t\t</ul>
+\t\t\t
+\t\t\t\t{# Tab panes #}
+\t\t\t\t<div class=\"tab-content\">
+\t\t\t\t\t<div class=\"tab-pane {% if m != 'login' %}active{% endif %}\" id=\"home\" role=\"tabpanel\" data-mh=\"log-tab\">
+\t\t\t\t\t\t<div class=\"title h6\">Register to Dragsports</div>
+\t\t\t\t\t\t{% include 'start/register' %}
+\t\t\t\t\t</div>
+\t\t\t
+\t\t\t\t\t<div class=\"tab-pane {% if m == 'login' %}active{% endif %}\" id=\"profile\" role=\"tabpanel\" data-mh=\"log-tab\">
+\t\t\t\t\t\t<div class=\"title h6\">Login to your Account</div>
+\t\t\t\t\t\t{% include 'start/login' %}
+\t\t\t\t\t\t<!-- Button trigger modal -->
+\t\t\t\t\t\t<button type=\"button\" class=\"btn btn-primary\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\">
+\t\t\t\t\t\t  Launch demo modal
+\t\t\t\t\t\t</button>
+
+\t\t\t\t\t\t<div class=\"modal-mx\">
+\t\t\t\t\t\t\t<div class=\"modal fade\" id=\"exampleModalCenter\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"exampleModalCenterTitle\" aria-hidden=\"true\">
+\t\t\t\t\t\t\t\t<div class=\"modal-dialog modal-dialog-centered\" role=\"document\">
+\t\t\t\t\t\t\t\t    <form class=\"modal-content modal-sm\" id=\"continue_form\">
+\t\t\t\t\t\t\t\t\t    <div class=\"modal-header\">
+\t\t\t\t\t\t\t\t\t        <h5 class=\"modal-title\" id=\"exampleModalLongTitle\">Only one more step!</h5>
+\t\t\t\t\t\t\t\t\t        {#  #}<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
+\t\t\t\t\t\t\t\t\t          \t<span aria-hidden=\"true\">&times;</span>
+\t\t\t\t\t\t\t\t\t        </button>
+\t\t\t\t\t\t\t\t\t \t</div>
+\t\t\t\t\t\t\t\t      \t<div class=\"modal-body\">
+\t\t\t\t\t\t\t\t      \t\t<div class=\"row\">
+\t\t\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group date-time-picker label-floating\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthday</label>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<input name=\"datetimepicker\" value=\"{{ timestamp()|date('d/m/Y') }}\" />
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-calendar-icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-calendar-icon\"></use></svg>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Gender</label>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\" name=\"gender\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"male\">Male</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<option value=\"female\">Female</option>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t      \t</div>
+\t\t\t\t\t\t\t\t\t    <div class=\"modal-footer\">
+\t\t\t\t\t\t\t\t\t\t    <button type=\"button\" class=\"btn btn-purple btn-lg full-width\" id=\"continue_btn\">Continue</button>
+\t\t\t\t\t\t\t\t\t    </div>
+\t\t\t\t\t\t\t\t    </form>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t
+
+
+\t\t\t\t\t</div>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t\t
+\t\t\t{# ... end Login-Registration Form #}\t\t</div>
+\t</div>
+</div>
+
+
+{# JS Scripts #}
+<script src=\"assets/dragsport/js/jquery-3.2.1.js\"></script>
+<script src=\"assets/dragsport/js/jquery.appear.js\"></script>
+<script src=\"assets/dragsport/js/jquery.mousewheel.js\"></script>
+<script src=\"assets/dragsport/js/perfect-scrollbar.js\"></script>
+<script src=\"assets/dragsport/js/jquery.matchHeight.js\"></script>
+<script src=\"assets/dragsport/js/svgxuse.js\"></script>
+<script src=\"assets/dragsport/js/imagesloaded.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/Headroom.js\"></script>
+<script src=\"assets/dragsport/js/velocity.js\"></script>
+<script src=\"assets/dragsport/js/ScrollMagic.js\"></script>
+<script src=\"assets/dragsport/js/jquery.waypoints.js\"></script>
+<script src=\"assets/dragsport/js/jquery.countTo.js\"></script>
+<script src=\"assets/dragsport/js/popper.min.js\"></script>
+<script src=\"assets/dragsport/js/material.min.js\"></script>
+<script src=\"assets/dragsport/js/bootstrap-select.js\"></script>
+<script src=\"assets/dragsport/js/smooth-scroll.js\"></script>
+<script src=\"assets/dragsport/js/selectize.js\"></script>
+<script src=\"assets/dragsport/js/swiper.jquery.js\"></script>
+<script src=\"assets/dragsport/js/moment.js\"></script>
+<script src=\"assets/dragsport/js/daterangepicker.js\"></script>
+<script src=\"assets/dragsport/js/simplecalendar.js\"></script>
+<script src=\"assets/dragsport/js/fullcalendar.js\"></script>
+<script src=\"assets/dragsport/js/isotope.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/ajax-pagination.js\"></script>
+<script src=\"assets/dragsport/js/Chart.js\"></script>
+<script src=\"assets/dragsport/js/chartjs-plugin-deferred.js\"></script>
+<script src=\"assets/dragsport/js/circle-progress.js\"></script>
+<script src=\"assets/dragsport/js/loader.js\"></script>
+<script src=\"assets/dragsport/js/run-chart.js\"></script>
+<script src=\"assets/dragsport/js/jquery.magnific-popup.js\"></script>
+<script src=\"assets/dragsport/js/jquery.gifplayer.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-and-player.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-playlist-plugin.min.js\"></script>
+
+<script defer src=\"assets/dragsport/fonts/fontawesome-all.js\"></script>
+
+<script src=\"assets/dragsport/Bootstrap/dist/js/bootstrap.bundle.js\"></script>
+<script src=\"assets/dragsport/js/base-init.js\"></script>
+
+{# Extra #}
+<script src=\"assets/dragsport/vendor/mojs/mo.min.js\"></script>
+<script src=\"assets/dragsport/vendor/noty/noty.min.js\"></script>
+<script src=\"assets/dragsport/vendor/ladda/spin.min.js\"></script>
+<script src=\"assets/dragsport/vendor/ladda/ladda.min.js\"></script>
+<script src=\"assets/jscontrollers/overall/alerts.js\"></script>
+
+{# Register and login #}
+<script src=\"assets/jscontrollers/start/register.js\"></script>
+<script src=\"assets/jscontrollers/start/login.js\"></script>
+<script src=\"assets/jscontrollers/start/FBlogin.js\"></script>
+
+
+</body>
+</html>", "start/start.twig", "C:\\xampp\\htdocs\\dragsport\\app\\templates\\start\\start.twig");
+    }
+}

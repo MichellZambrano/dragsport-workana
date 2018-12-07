@@ -23,6 +23,17 @@ $app->post('/login', function() use($app) {
 });
 
 /**
+    * Inicio de sesión con facebook
+    *
+    * @return json
+*/  
+$app->post('/loginFB', function() use($app) {
+    $u = new Model\Users;   
+
+    return $app->json($u->loginFB());   
+});
+
+/**
     * Registro de un usuario
     *
     * @return json

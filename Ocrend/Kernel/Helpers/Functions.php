@@ -336,8 +336,11 @@ final class Functions extends \Twig_Extension {
    *
    * @return int devuelve time()
    */
-  public static function timestamp() : int {
-    return time();
+  public static function timestamp($fecha = null) : int {
+    if (null == $fecha) {
+      return time();
+    }
+    return time() - strtotime($fecha);
   }
 
   /**

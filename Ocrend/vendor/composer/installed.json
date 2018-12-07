@@ -297,7 +297,8 @@
         "homepage": "http://silex.sensiolabs.org",
         "keywords": [
             "microframework"
-        ]
+        ],
+        "abandoned": "symfony/flex"
     },
     {
         "name": "swiftmailer/swiftmailer",
