@@ -22,7 +22,7 @@
 			<div class="or"></div>
 			<a href="javascript:loginFB()" class="btn btn-lg bg-facebook full-width btn-icon-left"><i class="fab fa-facebook-f" aria-hidden="true"></i>Login with Facebook</a>
 			<a href="#" class="btn btn-lg bg-twitter full-width btn-icon-left"><i class="fab fa-twitter" aria-hidden="true"></i>Login with Twitter</a>
-			<a href="#" class="btn btn-lg bg-twitch full-width btn-icon-left"><i class="fab fa-twitch" aria-hidden="true"></i>Login with Twitch</a>
+			<a href="https://api.twitch.tv/kraken/oauth2/authorize?response_type=code&client_id={{ config.twitch.client_id }}&redirect_uri={{ config.twitch.redirect_url }}&scope=user_read" class="btn btn-lg bg-twitch full-width btn-icon-left"><i class="fab fa-twitch" aria-hidden="true"></i>Login with Twitch</a>
 			<p>Don’t you have an account? <a href="start/register">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
 		</div>
 	</div>

@@ -33,6 +33,18 @@ $app->post('/loginFB', function() use($app) {
     return $app->json($u->loginFB());   
 });
 
+
+/**
+    * Inicio de sesión con Twitch
+    *
+    * @return json
+*/  
+$app->post('/loginTC2', function() use($app) {
+    $u = new Model\Users;   
+
+    return $app->json($u->loginTC2());   
+});
+
 /**
     * Registro de un usuario
     *

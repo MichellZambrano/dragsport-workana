@@ -26,9 +26,30 @@ class startController extends Controllers implements IControllers {
         parent::__construct($router,array(
             'users_not_logged' => true
         ));
+   
+        $u = new Model\Users;
+
+        switch ($this->method) {
+        	case 'tc':
+        		# Token
+        		$token = $u->getTCToken();
+        		# Login de usuario
+        		$tc_u = $u->loginTC($token);
+        		# Template
+        		$this->template->display('start/start', array(
+					'm' => 'login',
+					'tc_u' => $tc_u
+				));
+        	break;
+        	
+        	default:
+        		$this->template->display('start/start', array(
+					'm' => $router->getMethod()
+				));
+        	break;
+        }
+
         
-		$this->template->display('start/start', array(
-			'm' => $router->getMethod()
-		));
+		
     }
 }

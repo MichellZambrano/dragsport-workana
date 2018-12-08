@@ -193,6 +193,53 @@
 						{% include 'start/login' %}
 
 						<div class="modal-mx"></div>
+
+						{% if null != tc_u and null == tc_u.success %}
+						<div class="modal fade" id="lastStep" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+						    <div class="modal-dialog modal-dialog-centered" role="document">
+						        <form class="modal-content modal-sm" id="tc_continue_form" role="form">
+						          <div class="modal-header">
+						              <h5 class="modal-title" id="exampleModalLongTitle">Only one more step!</h5>
+						          </div>
+						              <div class="modal-body">
+						                <div class="row">
+
+
+						              
+							                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+												<div class="form-group label-floating is-empty">
+													<label class="control-label">Last Name</label>
+													<input class="form-control" placeholder="" type="text" name="last_name">
+												<span class="material-input"></span></div>
+
+							                    <div class="form-group date-time-picker label-floating">
+								                    <label class="control-label">Your Birthday</label>
+								                    <input name="datetimepicker" value="01/01/{{ timestamp()|date('Y') - 18 }}" />
+								                    <span class="input-group-addon">
+								                        <svg class="olymp-calendar-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+								                    </span>
+							                    </div>
+
+							                    <div class="form-group label-floating is-select">
+								                    <label class="control-label">Your Gender</label>
+								                    <select class="selectpicker form-control" name="gender">
+								                        <option value="male">Male</option>
+								                        <option value="female">Female</option>
+								                    </select>
+							                    </div>
+							                </div>
+
+
+
+						                </div>
+						              </div>
+						            <div class="modal-footer">
+						              	<button type="submit" class="btn btn-purple btn-lg full-width" id="tc_continue_btn">Continue</button>
+						            </div>
+						          </form>
+						     </div>
+						 </div>
+						{% endif %}
 						
 					</div>
 				</div>
@@ -256,6 +303,71 @@
 <script src="assets/jscontrollers/start/lostpass.js"></script>
 <script src="assets/jscontrollers/start/FBlogin.js"></script>
 
+{% if null != tc_u and null == tc_u.success %}
+<script>
+	$('#lastStep').modal({
+	    keyboard: false,
+	    show: true,
+	    backdrop: 'static'
+	});
+
+	$('form#tc_continue_form').submit(function(e){
+	    e.defaultPrevented;
+	    var $Form = $(this);
+	    var __data = {{ tc_u|json_encode|raw }};
+
+	    $Form.serializeArray().map(function(x){__data[x.name] = x.value;}); 
+
+	    if(undefined == $Form.data('locked') || false == $Form.data('locked')) {
+	      var l = Ladda.create( document.querySelector( '#tc_continue_btn' ) );
+	      l.start();
+
+	      $.ajax({
+	          type : "POST",
+	          url : "api/loginTC2",
+	          dataType: 'json',
+	          data : __data,
+	          beforeSend: function(){ 
+	              $Form.data('locked', true) 
+	          },
+	          success : function(json) {
+	              if(json.success == 1) {
+	                  success_message(json.message);
+	                  setTimeout(function(){
+	                      location.reload();
+	                  }, 1000);
+	              } else {
+	                  error_message(json.message);
+	              }
+	          },
+	          error : function(xhr, status) {
+	              error_message('An internal problem has occurred');
+	          },
+	          complete: function(){ 
+	              $Form.data('locked', false);
+	              l.stop();
+	          } 
+	      });
+	    }
+
+	    return false;
+	});
+</script>
+
+{% endif %}
+
+
+{% if null != tc_u and null != tc_u.success and tc_u.success %}
+<script>
+	var l = Ladda.create( document.querySelector( '.bg-twitch' ) );
+	l.start();
+	success_message('Connected successfully.');
+	setTimeout(function(){
+	    location.reload();
+	}, 1000);
+	l.stop();
+</script>
+{% endif %}
 
 </body>
 </html>

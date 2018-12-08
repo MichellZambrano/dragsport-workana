@@ -291,15 +291,37 @@ class Users extends Models implements IModels {
         throw new \RuntimeException('The user is not logged in.');
     }
     /**
-     * Trae el id de un usuario registrado con facebook
+     * Trae el id de un usuario registrado con alguna red social
      * 
-     * @param $fbId : Id del user de facebook
+     * @param $social_id : Id del user de facebook
      * 
      * @return array|false
      */
-    private function getFbUserById($fbId){
-        $fbId = $this->db->scape($fbId);
-        return $this->db->select('id_user', 'users', null, "social_id = '$fbId'", 1);
+    private function getSocialUserById($social_id, $login_with){
+        $social_id = $this->db->scape($social_id);
+        return $this->db->select('id_user', 'users', null, "social_id = '$social_id' AND login_with = '$login_with'", 1);
+    }
+    /**
+     * Validamos a un usuario en un método de inicio se sesión
+     * 
+     * @param array $user : Datos del usuario enviados
+     * @param string $login_with : Tipo de logeo
+     * 
+     * @return void
+     */
+    private function checkUser($user, string $login_with){
+        # Id del usuario
+        $id_user = $this->getSocialUserById($user['id'], 'fb');
+        
+        # Validar existencia del usuario
+        if (false == $id_user) {
+            $id_user = $this->registerUser($user, $login_with);
+        }
+
+        # Iniciar sesión
+        $this->generateSession(array(
+            'id_user' => $id_user[0]['id_user']
+        ));
     }
     /**
      * Registra un usuario con facebook
@@ -308,7 +330,7 @@ class Users extends Models implements IModels {
      * 
      * @return id del usuario en forma de matriz $array[0]['id_user']
      */
-    private function registerFB($user){
+    private function registerUser($user, string $login_with){
         # Verificar email 
         $this->checkEmail($user['email']);
 
@@ -328,6 +350,7 @@ class Users extends Models implements IModels {
             'pass' => Helper\Strings::hash( uniqid() ),
             'birthdate' => strtotime( str_replace('/', '-', $user['datetimepicker'])),
             'gender' => $user['gender'],
+            'login_with' => $login_with,
             'social_id' => $user['id'],
             'created_at' => time()
         ));
@@ -339,36 +362,9 @@ class Users extends Models implements IModels {
             )
         );
     }
-    /**
-     * Valida si un usuario está registrado o no.
-     * si no está registrado lo registra e inicia sesión | inicia sesión
-     * 
-     * @param array $user : Datos del usuaio
-     * 
-     * @return void
-     */
-    private function checkFbUser($user){
-        # Datos de la vista
-        $id = $user['id'];
-        $first_name = $user['first_name'];
-        $last_name = $user['last_name'];
-        $email = $user['email'];
-        $birthdate = $user['datetimepicker'];
-        $gender = $user['gender'];
 
-        # Id del usuario
-        $id_user = $this->getFbUserById($id);
-        
-        # Validar existencia del usuario
-        if (false == $id_user) {
-            $id_user = $this->registerFB($user);
-        }
 
-        # Iniciar sesión
-        $this->generateSession(array(
-            'id_user' => $id_user[0]['id_user']
-        ));
-    }
+
     /**
      * Logea a un usuario con facebook
      * 
@@ -378,7 +374,7 @@ class Users extends Models implements IModels {
         try {
             global $http;
             # Usuario de facebook
-            $user = $this->getFbUserById($http->request->get('id'));
+            $user = $this->getSocialUserById($http->request->get('id'), 'fb');
             # Evaluar si existe fecha de nacimiento y genero
             if (false == $user && Helper\Functions::e($http->request->get('datetimepicker'),$http->request->get('gender'))) {
                  return array('nextStep' => true);
@@ -386,9 +382,9 @@ class Users extends Models implements IModels {
             # En caso de no existir el usuario pero si la fecha y el género
             else if (false == $user) {
                 # Validar usuario
-                $this->checkFbUser($http->request->all());
+                $this->checkUser($http->request->all(), 'fb');
             }else{
-                 # Iniciar sesión
+                # Iniciar sesión
                 $this->generateSession(array(
                     'id_user' => $user[0]['id_user']
                 ));
@@ -400,7 +396,114 @@ class Users extends Models implements IModels {
             return array('success' => 0, 'message' => $e->getMessage());
         }
     }
+    /**
+     * Obtiene el token de twitch
+     * 
+     * @return string con el token de twitch
+     */
+    public function getTCToken() {
+        global $http, $config;
 
+        # Obtenemos el código
+        $code = $http->query->get('code');
+
+        # Instancia de la api de curl
+        $ApiCurl = new ApiCurl;
+
+        # Realizamos la peticion
+        $results = $ApiCurl->curl_post_query($config['twitch']['token_url'], array(
+            'client_id' => $config['twitch']['client_id'],
+            'client_secret' => $config['twitch']['client_secret'],
+            'grant_type' => 'authorization_code',
+            'redirect_uri' => $config['twitch']['redirect_url'],
+            'code' => $code
+        ));
+
+        # En caso de error
+        if (array_key_exists('status', $results) && $results['status'] == 400) {
+            Helper\Functions::redir($config['build']['url'] . 'start/login');
+            exit;
+        }
+        # Devolvemos el token
+        return $results['access_token'];
+    }
+
+    /**
+     * Si un usuario existe lo logeacon twitch
+     * 
+     * @param string $token : Token de twitch
+     * 
+     * @return array
+     */
+    public function loginTC(string $token){
+        global $config;
+
+        # Instancia de la api de curl
+        $ApiCurl = new ApiCurl;
+
+        # Realizamos la peticion
+        $user = $ApiCurl->curl_header_query($config['twitch']['user_url'], array(
+            'Accept: application/vnd.twitchtv.v3+json',
+            'Client-ID: ' . $config['twitch']['client_id'],
+            'Authorization: OAuth ' . $token
+        ));
+
+        # COmprobar usuario
+        $u = $this->getSocialUserById($user['_id'], 'tc');
+
+        # En caso de no existir el usuario
+        if (false == $u) {
+            return $user;
+        }
+
+        # Iniciar sesión
+        $this->generateSession(array(
+            'id_user' => $u[0]['id_user']
+        ));
+        
+        return array('success' => true);
+    }
+
+    /**
+     * En Caso de no existir el usuario pasa a esta fase donde lo registra y logea
+     * 
+     * @return array
+     */
+    public function loginTC2() : array {
+        try {
+            global $http;
+
+            $data = array(
+                'id' => $http->request->get('_id'),
+                'first_name' => $http->request->get('name'),
+                'last_name' => $http->request->get('last_name'),
+                'email' => $http->request->get('email'),
+                'datetimepicker' => $http->request->get('datetimepicker'),
+                'gender' => $http->request->get('gender')
+            );
+
+            # Tdos los campos son requeridos
+            if (!Helper\Functions::all_full($data)) {
+                throw new ModelsException('All fields are required.');
+            }
+
+
+            # Obtenemos el usuario si existe
+            $u = $this->getSocialUserById($data['id'], 'tc');
+
+            # Si no existe el usuario
+            if (false == $u) {
+                $this->checkUser($data, 'tc');
+            }
+           
+           
+            return array('success' => 1, 'message' => 'Connected successfully.');
+           
+
+        } catch (ModelsException $e) {
+            return array('success' => 0, 'message' => $e->getMessage());
+        }
+    }
      /**
      * Realiza la acción de login dentro del sistema
      *

@@ -41,6 +41,14 @@ facebook:
   app_id: 364400100982586
   app_secret: 2215a5452465d222cdb23c3a828aa641
   default_graph_version: v3.2
+
+# Configuración api Twitch
+twitch:
+  client_id: nionyeaipt5w1mjm9q1rf1qbuk5w3v
+  client_secret: ufk81wgxlnyxgx3rjzk4s83sxtx1vk
+  redirect_url: http://localhost/dragsport/start/tc
+  token_url: https://api.twitch.tv/kraken/oauth2/token
+  user_url: https://api.twitch.tv/kraken/user
   
 # Configuración del sitio
 build:
