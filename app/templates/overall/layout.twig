@@ -1,28 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {# Formato #}
+    
     {{ base_assets()|raw }}
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile Page</title>
 
-    {# Estilo definido por defecto para presentar el framework #}
-    {# No es necesaria la existencia de este archivo, puede ser borrado #}
-    <link rel="stylesheet" href="assets/framework/main.min.css" />
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    {% block appHeader %}
-    {% endblock %}
+    <!-- Main Font -->
+    <script src="assets/dragsport/js/webfontloader.min.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Roboto:300,400,500,700:latin']
+            }
+        });
+    </script>
 
-    <title>{{ config.build.name }}</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/dragsport/Bootstrap/dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" type="text/css" href="assets/dragsport/Bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="assets/dragsport/Bootstrap/dist/css/bootstrap-grid.css">
+    {% block appHeader %}{% endblock %}
+    <!-- Main Styles CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/dragsport/css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/dragsport/css/fonts.min.css">
+
+    
 </head>
 <body>
-    {% block appBody %}
-    {% endblock %}
 
-    {# Sólamente necesario para facilitar las peticiones AJAX del generador, puede eliminarse #}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    {% block appFooter %}
-    {% endblock %}
+
+{# Barra lateral izquierda #}
+{% include 'overall/leftSidebar' %}
+
+{# Barra lateral Derecha #}
+{% include 'overall/rightSidebar' %}
+
+
+{# Header #}
+{% include 'overall/topnav' %}
+
+{# Contenido #}
+{% block appBody %}{% endblock %}
+
+{# Chat Box #}
+{% include 'overall/chat' %}
+
+
+<!-- JS Scripts -->
+<script src="assets/dragsport/js/jquery-3.2.1.js"></script>
+<script src="assets/dragsport/js/jquery.appear.js"></script>
+<script src="assets/dragsport/js/jquery.mousewheel.js"></script>
+<script src="assets/dragsport/js/perfect-scrollbar.js"></script>
+<script src="assets/dragsport/js/jquery.matchHeight.js"></script>
+<script src="assets/dragsport/js/svgxuse.js"></script>
+<script src="assets/dragsport/js/imagesloaded.pkgd.js"></script>
+<script src="assets/dragsport/js/Headroom.js"></script>
+<script src="assets/dragsport/js/velocity.js"></script>
+<script src="assets/dragsport/js/ScrollMagic.js"></script>
+<script src="assets/dragsport/js/jquery.waypoints.js"></script>
+<script src="assets/dragsport/js/jquery.countTo.js"></script>
+<script src="assets/dragsport/js/popper.min.js"></script>
+<script src="assets/dragsport/js/material.min.js"></script>
+<script src="assets/dragsport/js/bootstrap-select.js"></script>
+<script src="assets/dragsport/js/smooth-scroll.js"></script>
+<script src="assets/dragsport/js/selectize.js"></script>
+<script src="assets/dragsport/js/swiper.jquery.js"></script>
+<script src="assets/dragsport/js/moment.js"></script>
+<script src="assets/dragsport/js/daterangepicker.js"></script>
+<script src="assets/dragsport/js/simplecalendar.js"></script>
+<script src="assets/dragsport/js/fullcalendar.js"></script>
+<script src="assets/dragsport/js/isotope.pkgd.js"></script>
+<script src="assets/dragsport/js/ajax-pagination.js"></script>
+<script src="assets/dragsport/js/Chart.js"></script>
+<script src="assets/dragsport/js/chartjs-plugin-deferred.js"></script>
+<script src="assets/dragsport/js/circle-progress.js"></script>
+<script src="assets/dragsport/js/loader.js"></script>
+<script src="assets/dragsport/js/run-chart.js"></script>
+<script src="assets/dragsport/js/jquery.magnific-popup.js"></script>
+<script src="assets/dragsport/js/jquery.gifplayer.js"></script>
+<script src="assets/dragsport/js/mediaelement-and-player.js"></script>
+<script src="assets/dragsport/js/mediaelement-playlist-plugin.min.js"></script>
+<script src="assets/dragsport/js/sticky-sidebar.js"></script>
+{% block appFooter %}{% endblock %}
+
+<script src="assets/dragsport/js/base-init.js"></script>
+<script defer src="assets/dragsport/fonts/fontawesome-all.js"></script>
+
+<script src="assets/dragsport/Bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+
 </body>
 </html>
