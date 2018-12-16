@@ -1,0 +1,736 @@
+{% extends 'overall/layout' %}
+{% block appBody %}
+<!-- Main Header Account -->
+
+<div class="main-header">
+	<div class="content-bg-wrap bg-account"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+				<div class="main-header-content">
+					<h1>Customize your Profile!</h1>
+					<p>Welcome to your account dashboard! Here you’ll find everything you need to change your profile
+	information, settings, read notifications and requests, view your latest messages, change your pasword and much
+	more! Also you can create or manage your own favourite page, have fun!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<img class="img-bottom" src="assets/dragsport/img/account-bottom.png" alt="friends">
+</div>
+
+<!-- ... end Main Header Account -->
+
+
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<div class="h6 title">Available Widgets</div>
+					<a href="javascript:void(0)" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Profile Intro
+						</label>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Last Photos
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Location
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							My Badges
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Blog Posts
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Spotify Playlist
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							My Friends
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Favourite Pages
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Twitter Feed
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							Latest Videos
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-lg-3 col-md-6 col-sm-6 col-6">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="checkbox">
+						<label>
+							<input name="optionsCheckboxes" type="checkbox">
+							My Poll
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">Profile Customization</div>
+
+					<div class="align-right">
+
+						<a href="javascript:void(0)" class="btn btn-md-2 btn-border-think custom-color c-grey">Back to Preset Settings</a>
+
+						<a href="javascript:void(0)" class="btn btn-primary btn-md-2">Save all Changes</a>
+
+					</div>
+
+					<a href="javascript:void(0)" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!-- Main Content Widgets -->
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Profile Intro</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-profile">Edit Widget</a>
+							</li>
+
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">My Badges</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Spotify Playlist</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Twitter Feed</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="empty-area">
+
+			</div>
+		</div>
+
+		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<article class="hentry post empty-post">
+
+				<div class="empty-post-content">
+					<div class="title">Your Post Updates Space</div>
+					<span>Al your posts will go here</span>
+				</div>
+
+				<div class="control-block-button post-control-button">
+
+					<a href="javascript:void(0)" class="btn btn-control">
+
+					</a>
+
+					<a href="javascript:void(0)" class="btn btn-control">
+
+					</a>
+
+					<a href="javascript:void(0)" class="btn btn-control">
+
+					</a>
+
+				</div>
+
+			</article>
+		</div>
+
+		<div class="col col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Last Photos</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Blog Posts</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-blog-post">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">My Friends</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">Favourite Pages</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-twitter">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="ui-block">
+				<div class="available-widget">
+					<div class="h6 title">My Poll</div>
+					<div class="more">
+						<svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+						<ul class="more-dropdown">
+							<li>
+								<a href="javascript:void(0)" data-toggle="modal" data-target="#edit-widget-pool">Edit Widget</a>
+							</li>
+							<li>
+								<a href="javascript:void(0)">Preview Widget</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="empty-area">
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- ... end Main Content Widgets -->
+
+
+
+
+<!-- Window-popup Edit Widget Twitter -->
+
+<div class="modal fade" id="edit-widget-twitter" tabindex="-1" role="dialog" aria-labelledby="edit-widget-twitter" aria-hidden="true">
+	<div class="modal-dialog window-popup edit-widget edit-widget-twitter" role="document">
+		<div class="modal-content">
+			<a href="javascript:void(0)" class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<svg class="olymp-close-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+			</a>
+
+			<div class="modal-header">
+				<h6 class="title">Edit Twitter Feed</h6>
+			</div>
+
+			<div class="modal-body">
+			<fieldset class="form-group label-floating is-select">
+				<label class="control-label">Amount of Tweets</label>
+				<select class="selectpicker form-control">
+					<option value="AL">Show 3 Last Tweets</option>
+					<option value="2">Show 6 Last Tweets</option>
+					<option value="WY">Show 9 Last Tweets</option>
+				</select>
+			</fieldset>
+
+			<p>You are logged in to Twitter as <a href="javascript:void(0)" class="c-twitter">@james_spiegelOK</a></p>
+
+			<a href="javascript:void(0)" class="btn bg-twitter btn-lg full-width btn-icon-left"><i class="fab fa-twitter" aria-hidden="true"></i>Twitter Account Logout</a>
+
+			<a href="javascript:void(0)" class="btn btn-primary btn-lg full-width">Save all Changes</a>
+		</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- ... end Window-popup Edit Widget Twitter -->
+
+<!-- Window-popup Edit Widget Profile -->
+
+<div class="modal fade" id="edit-widget-profile" tabindex="-1" role="dialog" aria-labelledby="edit-widget-profile" aria-hidden="true">
+	<div class="modal-dialog window-popup edit-widget edit-widget-profile" role="document">
+		<div class="modal-content">
+			<a href="javascript:void(0)" class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<svg class="olymp-close-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+			</a>
+
+			<div class="modal-header">
+				<h6 class="title">Edit Profile Intro </h6>
+			</div>
+
+			<div class="modal-body">
+				<p>This widget get it’s information from the “About” section of your profile. Just choose which elements you’d
+					like to show on the widget. <a href="javascript:void(0)">Click here</a> if you wanna change your information.
+				</p>
+			</div>
+
+			<div class="ui-block-title ui-block-title-small">
+				<h6 class="title">PERSONAL INFO</h6>
+			</div>
+
+			<div class="modal-body">
+				<div class="ui-block-content">
+					<div class="row">
+
+						<div class="col col-lg-4 col-md-4 col-sm-12  no-padding">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									About Me
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Lives In
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Sex
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Website
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Political Incline
+								</label>
+							</div>
+						</div>
+
+						<div class="col col-lg-4 col-md-4 col-sm-12  no-padding">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Birthday
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Occupatio
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Status
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Phone Number
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Social Networks
+								</label>
+							</div>
+						</div>
+
+						<div class="col col-lg-4 col-md-4 col-sm-12  no-padding">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Birthplace
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Joined
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Email
+								</label>
+							</div>
+
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Religious Belifs
+								</label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="ui-block-title ui-block-title-small">
+				<h6 class="title">Hobbies and Interests</h6>
+			</div>
+
+			<div class="modal-body">
+				<div class="ui-block-content">
+					<div class="row">
+
+						<div class="col col-lg-6 col-md-6 col-sm-12  no-padding">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Hobbies
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Favourite Tv Shows
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Favourite Movies
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Favourite Games
+								</label>
+							</div>
+						</div>
+
+						<div class="col col-lg-6 col-md-6 col-sm-12  no-padding">
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Favourite Music Bands / ...
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Favourite Books
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Favourite Writers
+								</label>
+							</div>
+							<div class="checkbox">
+								<label>
+									<input type="checkbox" name="optionsCheckboxes">
+									Other Interests
+								</label>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="modal-footer">
+				<a href="javascript:void(0)" class="btn btn-primary btn-lg full-width">Save all Changes</a>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!-- ... end Window-popup Edit Widget Profile -->
+
+<!-- Window-popup Edit Widget Blog Post -->
+
+<div class="modal fade" id="edit-widget-blog-post" tabindex="-1" role="dialog" aria-labelledby="edit-widget-blog-post" aria-hidden="true">
+	<div class="modal-dialog window-popup edit-widget edit-widget-blog-post" role="document">
+		<div class="modal-content">
+			<a href="javascript:void(0)" class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<svg class="olymp-close-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+			</a>
+
+			<div class="modal-header">
+				<h6 class="title">Edit Blog Posts</h6>
+			</div>
+
+			<div class="modal-body">
+			<fieldset class="form-group label-floating is-select">
+				<label class="control-label">Amount of Blog Posts</label>
+				<select class="selectpicker form-control">
+					<option value="AL">Show 3 Blog Posts</option>
+					<option value="2">Show 6 Blog Posts</option>
+					<option value="WY">Show 9 Blog Posts</option>
+				</select>
+			</fieldset>
+
+			<fieldset class="form-group label-floating is-select">
+				<label class="control-label">Organize Posts</label>
+				<select class="selectpicker form-control">
+					<option value="AL">By Date (Newest to Oldest)</option>
+					<option value="2">By Favorites</option>
+					<option value="WY">By Repost</option>
+				</select>
+			</fieldset>
+
+			<a href="javascript:void(0)" class="btn btn-primary btn-lg full-width">Save all Changes</a>
+		</div>
+		</div>
+	</div>
+</div>
+
+<!-- ... end Window-popup Edit Widget Blog Post -->
+
+<!-- Window-popup Edit Widget Pool -->
+
+<div class="modal fade" id="edit-widget-pool" tabindex="-1" role="dialog" aria-labelledby="edit-widget-pool" aria-hidden="true">
+	<div class="modal-dialog window-popup edit-widget edit-widget-pool" role="document">
+		<div class="modal-content">
+			<a href="javascript:void(0)" class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<svg class="olymp-close-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+			</a>
+
+			<div class="modal-header">
+				<h6 class="title">Edit My Poll</h6>
+			</div>
+
+			<div class="modal-body">
+			<form class="form-group label-floating">
+				<label class="control-label">Poll Question</label>
+				<input class="form-control" placeholder="" type="text" value="If you had to choose, which actor do you prefer to be the next D">
+			</form>
+			<form class="form-group label-floating">
+				<label class="control-label">Option 01</label>
+				<input class="form-control" placeholder="" type="text" value="Thomas Bale">
+			</form>
+			<form class="form-group label-floating">
+				<label class="control-label">Option 02</label>
+				<input class="form-control" placeholder="" type="text" value="Ben Robertson">
+			</form>
+			<form class="form-group label-floating">
+				<label class="control-label">Option 03</label>
+				<input class="form-control" placeholder="" type="text" value="">
+			</form>
+
+			<a href="javascript:void(0)" class="inline-items add-option">
+				<svg class="olymp-plus-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-plus-icon"></use></svg>
+				<span>Add Poll Option</span>
+			</a>
+
+			<div class="row">
+				<div class="col col-lg-6 col-sm-12 col-12">
+					<a href="javascript:void(0)" class="btn btn-secondary btn-md full-width">Delete Poll</a>
+				</div>
+
+				<div class="col col-lg-6 col-sm-12 col-12">
+					<a href="javascript:void(0)" class="btn btn-primary btn-md full-width">Save all Changes</a>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+<!-- ... end Window-popup Edit Widget Pool -->
+{% endblock %}

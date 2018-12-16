@@ -341,6 +341,10 @@ class Users extends Models implements IModels {
         if (!in_array($user['gender'], ['female', 'male'])) {
              throw new ModelsException('You must choose a gender.');
         }
+
+        # Verificar Deportes
+        $this->checkSports($user['favorite_sports']);
+        
         
         # Registrar al usuario
         $id_user = $this->db->insert('users', array(
@@ -354,6 +358,9 @@ class Users extends Models implements IModels {
             'social_id' => $user['id'],
             'created_at' => time()
         ));
+
+        # Guardamos los deportes
+        $this->saveSports($user['favorite_sports'], $id_user);
 
         # Datos a devolver
         return array(
@@ -479,11 +486,12 @@ class Users extends Models implements IModels {
                 'last_name' => $http->request->get('last_name'),
                 'email' => $http->request->get('email'),
                 'datetimepicker' => $http->request->get('datetimepicker'),
-                'gender' => $http->request->get('gender')
+                'gender' => $http->request->get('gender'),
+                'favorite_sports' => $http->request->get('favorite_sports')
             );
 
             # Tdos los campos son requeridos
-            if (!Helper\Functions::all_full($data)) {
+            if (Helper\Functions::e($data['id'], $data['first_name'], $data['last_name'], $data['email'], $data['datetimepicker'],$data['gender']) || !Helper\Functions::all_full($data['favorite_sports']) ) {
                 throw new ModelsException('All fields are required.');
             }
 
@@ -545,6 +553,55 @@ class Users extends Models implements IModels {
     }
 
     /**
+     * Verifica los deportes favoritos
+     * 
+     * @param array $sports : Deportes seleccionados
+     * 
+     * @return void
+     */
+    private function checkSports($sports) {
+        # Validar que hallan deportes selecionados
+        if (null == $sports || !Helper\Functions::all_full($sports)) {
+            throw new ModelsException('You must select at least 1 sport.');
+        }
+        foreach ($sports as $s) {
+            # Vericiar que sea numerico 
+            if (!is_numeric($s)) {
+                throw new ModelsException('Invalid Sport.');
+            }
+
+            # Verificar que exista
+            if (false == $this->db->select('id_sport', 'sports', null, "id_sport = '$s'", 1)) {
+                throw new ModelsException('Invalid Sport.');
+            }
+        }
+    }
+    /**
+     * Guarda los deportes 
+     * 
+     * @return void
+     */
+    private function saveSports(array $sports, int $id_user){
+        # Preparamos la consulta
+        $prepare = $this->db->prepare("INSERT INTO user_sport VALUES (?,?)");
+        # Preparamos los paráemtros
+        $prepare->bind_param('ii', $id_u, $id_sport);
+        # Recorremos los deportes
+        foreach ($sports as $s) {
+            # ASignamos los valores
+            $id_u = $id_user;
+            $id_sport = $s;
+            
+
+            # Ejecutamos la consulta
+            $prepare->execute();
+        }
+
+        # Cerramos la consulta
+        $prepare->close();
+    }
+
+    /**
      * Realiza la acción de registro dentro del sistema
      *
      * @return array : Con información de éxito/falla al registrar el usuario nuevo.
@@ -560,6 +617,7 @@ class Users extends Models implements IModels {
             $birthdate = $http->request->get('datetimepicker');
             $gender = $http->request->get('gender');
             $tyc = $http->request->get('optionsCheckboxes');
+            $sports = $http->request->get('favorite_sports');
 
             # Verificar que no están vacíos
             if (Helper\Functions::e($first_name, $last_name, $email, $pass, $birthdate, $gender)) {
@@ -577,11 +635,15 @@ class Users extends Models implements IModels {
                  throw new ModelsException('You must choose a gender.');
             }
 
+            # Verificar Deportes
+            $this->checkSports($sports);
+
             # Verificar termnos y condiciones
             if (null == $tyc) {
                 throw new ModelsException('You must accept the terms and conditions.');
             }
 
+            
          
             # Registrar al usuario
             $id_user = $this->db->insert('users', array(
@@ -593,6 +655,9 @@ class Users extends Models implements IModels {
                 'gender' => $gender,
                 'created_at' => time()
             ));
+
+            # Guardamos los deportes
+            $this->saveSports($sports, $id_user);
 
             # Iniciar sesión
             $this->generateSession(array(

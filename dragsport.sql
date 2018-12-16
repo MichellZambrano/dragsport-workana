@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-12-2018 a las 04:37:53
+-- Tiempo de generación: 16-12-2018 a las 08:25:17
 -- Versión del servidor: 10.1.33-MariaDB
 -- Versión de PHP: 7.2.6
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `dragsport`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sports`
+--
+
+CREATE TABLE `sports` (
+  `id_sport` int(10) UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `created_at` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `sports`
+--
+
+INSERT INTO `sports` (`id_sport`, `name`, `created_at`) VALUES
+(1, 'Football', 1544880004),
+(2, 'Basketball', 1544880011),
+(3, 'Soccer', 1544880060),
+(4, 'Kickball', 1544880141),
+(5, 'Baseball', 1544880155);
 
 -- --------------------------------------------------------
 
@@ -44,18 +67,26 @@ CREATE TABLE `users` (
   `created_at` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
 --
--- Volcado de datos para la tabla `users`
+-- Estructura de tabla para la tabla `user_sport`
 --
 
-INSERT INTO `users` (`id_user`, `first_name`, `last_name`, `email`, `pass`, `birthdate`, `gender`, `login_with`, `social_id`, `image`, `tmp_pass`, `token`, `created_at`) VALUES
-(1, 'test', 'test', 'test@demo.com', '$2a$10$b65a06983a40dff7b1f7euys9aDoxG9OZF40MxpT9hYq861pb/M8K', 796363200, 'male', 'email', NULL, NULL, NULL, NULL, 1544101380),
-(2, 'Armando', 'Amaya', 'armjaxd@hotmail.com', '$2a$10$7145785b291d2970bd0e9u4oh4qdcr48OtE0C3bIsIGoHrVMoVuIa', 796363200, 'male', 'fb', '10218449797824110', NULL, NULL, NULL, 1544294091),
-(3, 'bb9d201a4b', 'bbbba', 'bb9d201a4b@nicemail.pro', '$2a$10$21e040f96f4346cc08accOKnREHC6K28FolR2lGR7I3qwKCouX4CG', 946699200, 'male', 'tc', '254800000', NULL, NULL, NULL, 1544297223);
+CREATE TABLE `user_sport` (
+  `id_user` int(10) UNSIGNED NOT NULL,
+  `id_sport` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `sports`
+--
+ALTER TABLE `sports`
+  ADD PRIMARY KEY (`id_sport`);
 
 --
 -- Indices de la tabla `users`
@@ -64,14 +95,38 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id_user`);
 
 --
+-- Indices de la tabla `user_sport`
+--
+ALTER TABLE `user_sport`
+  ADD KEY `id_user` (`id_user`),
+  ADD KEY `id_sport` (`id_sport`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `sports`
+--
+ALTER TABLE `sports`
+  MODIFY `id_sport` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `user_sport`
+--
+ALTER TABLE `user_sport`
+  ADD CONSTRAINT `user_sport_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `users` (`id_user`) ON DELETE CASCADE,
+  ADD CONSTRAINT `user_sport_ibfk_2` FOREIGN KEY (`id_sport`) REFERENCES `sports` (`id_sport`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

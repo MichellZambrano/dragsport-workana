@@ -1,0 +1,396 @@
+<?php
+
+/* account/account.twig */
+class __TwigTemplate_3f3f607d30a79e32189c54cee2d896875047832c5f9c886e5a4526812367d034 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("overall/account", "account/account.twig", 1);
+        $this->blocks = array(
+            'appContent' => array($this, 'block_appContent'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "overall/account";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_appContent($context, array $blocks = array())
+    {
+        // line 4
+        echo "<!-- Your Account Personal Information -->
+
+<div class=\"container\">
+\t<div class=\"row\">
+\t\t<div class=\"col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12\">
+\t\t\t<div class=\"ui-block\">
+\t\t\t\t<div class=\"ui-block-title\">
+\t\t\t\t\t<h6 class=\"title\">Personal Information</h6>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"ui-block-content\">
+
+\t\t\t\t\t
+\t\t\t\t\t<!-- Personal Information Form  -->
+\t\t\t\t\t
+\t\t\t\t\t<form>
+\t\t\t\t\t\t<div class=\"row\">
+\t\t\t\t\t
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">First Name</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"James\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Email</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"email\" value=\"jspiegel@yourmail.com\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group date-time-picker label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthday</label>
+\t\t\t\t\t\t\t\t\t<input name=\"datetimepicker\" value=\"10/24/1984\" />
+\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-month-calendar-icon icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-month-calendar-icon\"></use></svg>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Last Name</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Spiegel\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Website</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"email\" value=\"daydreamzagency.com\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Phone Number</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t<div class=\"col col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Country</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"US\">United States</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"AU\">Australia</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your State / Province</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"CA\">California</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"TE\">Texas</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your City</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"SF\">San Francisco</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"NY\">New York</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Write a little description about you</label>
+\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56</textarea>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Gender</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Male</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Female</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Religious Belifs</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthplace</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Occupation</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"UI/UX Designer\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Status</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Married</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Not Married</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Political Incline</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Democrat\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Facebook Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" value=\"www.facebook.com/james-spiegel95321\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-facebook-f c-facebook\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Twitter Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" value=\"www.twitter.com/james_spiegelOK\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-twitter c-twitter\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your RSS Feed Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\">
+\t\t\t\t\t\t\t\t\t<i class=\"fa fa-rss c-rss\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Dribbble Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" value=\"www.dribbble.com/thecowboydesigner\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-dribbble c-dribbble\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Spotify Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-spotify c-spotify\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Restore all Attributes</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\">Save all Changes</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</form>
+\t\t\t\t\t
+\t\t\t\t\t<!-- ... end Personal Information Form  -->
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t
+\t</div>
+</div>
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "account/account.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  31 => 4,  28 => 3,  11 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{% extends 'overall/account' %}
+
+{% block appContent %}
+<!-- Your Account Personal Information -->
+
+<div class=\"container\">
+\t<div class=\"row\">
+\t\t<div class=\"col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12\">
+\t\t\t<div class=\"ui-block\">
+\t\t\t\t<div class=\"ui-block-title\">
+\t\t\t\t\t<h6 class=\"title\">Personal Information</h6>
+\t\t\t\t</div>
+\t\t\t\t<div class=\"ui-block-content\">
+
+\t\t\t\t\t
+\t\t\t\t\t<!-- Personal Information Form  -->
+\t\t\t\t\t
+\t\t\t\t\t<form>
+\t\t\t\t\t\t<div class=\"row\">
+\t\t\t\t\t
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">First Name</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"James\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Email</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"email\" value=\"jspiegel@yourmail.com\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group date-time-picker label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthday</label>
+\t\t\t\t\t\t\t\t\t<input name=\"datetimepicker\" value=\"10/24/1984\" />
+\t\t\t\t\t\t\t\t\t<span class=\"input-group-addon\">
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<svg class=\"olymp-month-calendar-icon icon\"><use xlink:href=\"assets/dragsport/svg-icons/sprites/icons.svg#olymp-month-calendar-icon\"></use></svg>
+\t\t\t\t\t\t\t\t\t\t\t\t\t\t</span>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Last Name</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Spiegel\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Website</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"email\" value=\"daydreamzagency.com\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Phone Number</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t<div class=\"col col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Country</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"US\">United States</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"AU\">Australia</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your State / Province</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"CA\">California</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"TE\">Texas</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-4 col-md-4 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your City</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"SF\">San Francisco</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"NY\">New York</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Write a little description about you</label>
+\t\t\t\t\t\t\t\t\t<textarea class=\"form-control\" placeholder=\"\">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56</textarea>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Gender</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Male</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Female</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Religious Belifs</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Birthplace</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Occupation</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"UI/UX Designer\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating is-select\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Status</label>
+\t\t\t\t\t\t\t\t\t<select class=\"selectpicker form-control\">
+\t\t\t\t\t\t\t\t\t\t<option value=\"MA\">Married</option>
+\t\t\t\t\t\t\t\t\t\t<option value=\"FE\">Not Married</option>
+\t\t\t\t\t\t\t\t\t</select>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t\t\t<div class=\"form-group label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Political Incline</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" placeholder=\"\" type=\"text\" value=\"Democrat\">
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Facebook Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" value=\"www.facebook.com/james-spiegel95321\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-facebook-f c-facebook\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Twitter Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" value=\"www.twitter.com/james_spiegelOK\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-twitter c-twitter\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your RSS Feed Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\">
+\t\t\t\t\t\t\t\t\t<i class=\"fa fa-rss c-rss\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Dribbble Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\" value=\"www.dribbble.com/thecowboydesigner\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-dribbble c-dribbble\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t\t<div class=\"form-group with-icon label-floating is-empty\">
+\t\t\t\t\t\t\t\t\t<label class=\"control-label\">Your Spotify Account</label>
+\t\t\t\t\t\t\t\t\t<input class=\"form-control\" type=\"text\">
+\t\t\t\t\t\t\t\t\t<i class=\"fab fa-spotify c-spotify\" aria-hidden=\"true\"></i>
+\t\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<button class=\"btn btn-secondary btn-lg full-width\">Restore all Attributes</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t<div class=\"col col-lg-6 col-md-6 col-sm-12 col-12\">
+\t\t\t\t\t\t\t\t<button class=\"btn btn-primary btn-lg full-width\">Save all Changes</button>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t
+\t\t\t\t\t\t</div>
+\t\t\t\t\t</form>
+\t\t\t\t\t
+\t\t\t\t\t<!-- ... end Personal Information Form  -->
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t
+\t</div>
+</div>
+{% endblock %}", "account/account.twig", "C:\\xampp\\htdocs\\dragsport\\app\\templates\\account\\account.twig");
+    }
+}

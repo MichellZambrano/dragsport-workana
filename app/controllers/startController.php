@@ -35,16 +35,19 @@ class startController extends Controllers implements IControllers {
         		$token = $u->getTCToken();
         		# Login de usuario
         		$tc_u = $u->loginTC($token);
+
         		# Template
         		$this->template->display('start/start', array(
 					'm' => 'login',
-					'tc_u' => $tc_u
+					'tc_u' => $tc_u,
+                    'sports' => (new Model\Sports)->get()
 				));
         	break;
         	
         	default:
         		$this->template->display('start/start', array(
-					'm' => $router->getMethod()
+					'm' => $router->getMethod(),
+                    'sports' => (new Model\Sports)->get()
 				));
         	break;
         }

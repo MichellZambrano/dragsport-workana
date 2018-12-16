@@ -1,7 +1,7 @@
 /*
 * Datos a enviar
 */
-var __data = {};
+var __data = new FormData();
 /*
 * Status del usaurio de facebook
 */
@@ -63,12 +63,13 @@ window.fbAsyncInit = function() {
 
 function data() {
 	FB.api('/me', {fields: 'id,first_name,last_name,email'}, function(response) {
-    $.each(response, function(index,element){ __data[index] = element; });
+    $.each(response, function(index,element){ __data.append(index, element); });
 
     $.ajax({
       type : "POST",
       url : "api/loginFB",
-      dataType: 'json',
+      contentType:false,
+      processData:false,
       data : __data,
       beforeSend: function(){ },
       success : function(json) {
@@ -114,94 +115,136 @@ function logoutFB(){
 function showContinue(){
 
   let year = new Date().getFullYear();
+  let sports = '';
 
-  let html_modal = `<div class="modal fade" id="lastStep" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <form class="modal-content modal-sm" id="continue_form" role="form">
-          <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLongTitle">Only one more step!</h5>
-          </div>
-              <div class="modal-body">
-                <div class="row">
-              
-                  <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                    <div class="form-group date-time-picker label-floating">
-                      <label class="control-label">Your Birthday</label>
-                      <input name="datetimepicker" value="01/01/${year - 18}" />
-                      <span class="input-group-addon">
-                        <svg class="olymp-calendar-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
-                      </span>
-                    </div>
-                    <div class="form-group label-floating is-select">
-                      <label class="control-label">Your Gender</label>
-                      <select class="selectpicker form-control" name="gender">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                      </select>
-                    </div>
+  $('#load_page').addClass('page-loading');
+  $('#load_page').html(`<div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+  </div>
+  <span>Loading</span>`);
 
-                  </div>
+  $.ajax({
+      type : "GET",
+      url : "api/sports",
+      beforeSend: function() {},
+      success : function(json) { 
+        if (false != json) {
+          $.each(json, function(i, e){
+            sports += `<option value="${e.id_sport}">${e.name}</option>`;
+          });
+        }
+
+
+        let html_modal = `<div class="modal fade" id="lastStep" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+              <form class="modal-content modal-sm" id="continue_form" role="form">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Only one more step!</h5>
                 </div>
-              </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-purple btn-lg full-width" id="continue_btn">Continue</button>
+                    <div class="modal-body">
+                      <div class="row">
+                    
+                        <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                          <div class="form-group date-time-picker label-floating">
+                            <label class="control-label">Your Birthday</label>
+                            <input name="datetimepicker" value="01/01/${year - 18}" />
+                            <span class="input-group-addon">
+                              <svg class="olymp-calendar-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+                            </span>
+                          </div>
+                          <div class="form-group label-floating is-select">
+                            <label class="control-label">Your Gender</label>
+                            <select class="selectpicker form-control" name="gender">
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                            </select>
+                          </div>
+
+                          <div class="form-group label-floating is-select">
+                            <label class="control-label">favorite sports</label>
+                            <select class="selectpicker form-control" name="favorite_sports[]" multiple title="Choose your favorites sports">
+                              ${sports}
+                            </select>
+                          </div>
+
+                        </div>
+                      </div>
+                    </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-purple btn-lg full-width" id="continue_btn">Continue</button>
+                  </div>
+                </form>
             </div>
-          </form>
-      </div>
-    </div>`;
+          </div>`;
 
+        
+
+        $('.modal-mx').html(html_modal);
+
+        $('#lastStep').modal({
+          keyboard: false,
+          show: true,
+          backdrop: 'static'
+        });
+
+        $('.selectpicker').selectpicker();
+        dateTimePicker();
+
+        $('form#continue_form').submit(function(e){
+          e.defaultPrevented;
+          var $Form = $(this);
+          $Form.serializeArray().map(function(x){__data.append(x.name, x.value);}); 
+
+          if(undefined == $Form.data('locked') || false == $Form.data('locked')) {
+            var l = Ladda.create( document.querySelector( '#continue_btn' ) );
+            l.start();
+
+            $.ajax({
+                type : "POST",
+                url : "api/loginFB",
+                contentType:false,
+              processData:false,
+                data : __data,
+                beforeSend: function(){ 
+                    $Form.data('locked', true) 
+                },
+                success : function(json) {
+                    if(json.success == 1) {
+                        success_message(json.message);
+                        setTimeout(function(){
+                            logoutFB();
+                        }, 1000);
+                    } else {
+                        error_message(json.message);
+                    }
+                },
+                error : function(xhr, status) {
+                    error_message('An internal problem has occurred');
+                },
+                complete: function(){ 
+                    $Form.data('locked', false);
+                    l.stop();
+                } 
+            });
+          }
+
+          return false;
+        });
+
+
+
+
+      },
+      error : function(xhr, status) {
+          error_message('An internal problem has occurred');
+      },
+      complete: function(){  
+        $('#load_page').removeClass('page-loading');
+        $('#load_page').html(' ');
+      } 
+  });
   
-
-  $('.modal-mx').html(html_modal);
-
-  $('#lastStep').modal({
-    keyboard: false,
-    show: true,
-    backdrop: 'static'
-  });
-
-  $('.selectpicker').selectpicker();
-  dateTimePicker();
-
-  $('form#continue_form').submit(function(e){
-    e.defaultPrevented;
-    var $Form = $(this);
-    $Form.serializeArray().map(function(x){__data[x.name] = x.value;}); 
-
-    if(undefined == $Form.data('locked') || false == $Form.data('locked')) {
-      var l = Ladda.create( document.querySelector( '#continue_btn' ) );
-      l.start();
-
-      $.ajax({
-          type : "POST",
-          url : "api/loginFB",
-          dataType: 'json',
-          data : __data,
-          beforeSend: function(){ 
-              $Form.data('locked', true) 
-          },
-          success : function(json) {
-              if(json.success == 1) {
-                  success_message(json.message);
-                  setTimeout(function(){
-                      logoutFB();
-                  }, 1000);
-              } else {
-                  error_message(json.message);
-              }
-          },
-          error : function(xhr, status) {
-              error_message('An internal problem has occurred');
-          },
-          complete: function(){ 
-              $Form.data('locked', false);
-              l.stop();
-          } 
-      });
-    }
-
-    return false;
-  });
 }
 
 

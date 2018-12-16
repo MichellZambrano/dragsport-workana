@@ -39,6 +39,8 @@
 
 <body class="landing-page">
 
+<div id="load_page"></div>
+
 <div class="content-bg-wrap"></div>
 
 
@@ -185,7 +187,8 @@
 				<div class="tab-content">
 					<div class="tab-pane {% if m != 'login' %}active{% endif %}" id="home" role="tabpanel" data-mh="log-tab">
 						<div class="title h6">Register to Dragsports</div>
-						{% include 'start/register' %}
+						{% include 'start/register' with { sports: sports } only %}
+
 					</div>
 			
 					<div class="tab-pane {% if m == 'login' %}active{% endif %}" id="profile" role="tabpanel" data-mh="log-tab">
@@ -203,9 +206,6 @@
 						          </div>
 						              <div class="modal-body">
 						                <div class="row">
-
-
-						              
 							                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
 												<div class="form-group label-floating is-empty">
 													<label class="control-label">Last Name</label>
@@ -227,10 +227,16 @@
 								                        <option value="female">Female</option>
 								                    </select>
 							                    </div>
+
+							                    <div class="form-group label-floating is-select">
+													<label class="control-label">favorite sports</label>
+													<select class="selectpicker form-control" name="favorite_sports[]" multiple title="Choose your favorites sports">
+														{% for s in sports if false != sports %}
+														<option value="{{ s.id_sport }}">{{ s.name }}</option>
+														{% endfor %}
+													</select>
+												</div>
 							                </div>
-
-
-
 						                </div>
 						              </div>
 						            <div class="modal-footer">
@@ -245,7 +251,7 @@
 				</div>
 			</div>
 			
-			{# ... end Login-Registration Form #}		</div>
+		</div>
 	</div>
 </div>
 
@@ -314,9 +320,14 @@
 	$('form#tc_continue_form').submit(function(e){
 	    e.defaultPrevented;
 	    var $Form = $(this);
-	    var __data = {{ tc_u|json_encode|raw }};
+	    var __data = new FormData();
 
-	    $Form.serializeArray().map(function(x){__data[x.name] = x.value;}); 
+	    __data.append('display_name', '{{ tc_u.display_name }}');
+	    __data.append('_id', '{{ tc_u._id }}');
+	    __data.append('name', '{{ tc_u.name }}');
+	    __data.append('email', '{{ tc_u.email }}');
+
+	    $Form.serializeArray().map(function(x){__data.append(x.name, x.value);}); 
 
 	    if(undefined == $Form.data('locked') || false == $Form.data('locked')) {
 	      var l = Ladda.create( document.querySelector( '#tc_continue_btn' ) );
@@ -325,7 +336,8 @@
 	      $.ajax({
 	          type : "POST",
 	          url : "api/loginTC2",
-	          dataType: 'json',
+	          contentType:false,
+      		  processData:false,
 	          data : __data,
 	          beforeSend: function(){ 
 	              $Form.data('locked', true) 

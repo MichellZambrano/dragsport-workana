@@ -35,6 +35,15 @@
 					<option value="female">Female</option>
 				</select>
 			</div>
+
+			<div class="form-group label-floating is-select">
+				<label class="control-label">favorite sports</label>
+				<select class="selectpicker form-control" name="favorite_sports[]" multiple title="Choose your favorites sports">
+					{% for s in sports if false != sports %}
+					<option value="{{ s.id_sport }}">{{ s.name }}</option>
+					{% endfor %}
+				</select>
+			</div>
 			<div class="remember">
 				<div class="checkbox">
 					<label>

@@ -2,8 +2,9 @@
  * Ajax action to api rest
 */
 function register(){
-    var $ocrendForm = $(this), __data = {};
-    $('#register_form').serializeArray().map(function(x){__data[x.name] = x.value;}); 
+    var $ocrendForm = $(this), __data = new FormData(document.getElementById('register_form'));
+    //$('#register_form').serializeArray().map(function(x){__data[x.name] = x.value;}); 
+
 
     if(undefined == $ocrendForm.data('locked') || false == $ocrendForm.data('locked')) {
 
@@ -12,7 +13,8 @@ function register(){
         $.ajax({
             type : "POST",
             url : "api/register",
-            dataType: 'json',
+            contentType:false,
+            processData:false,
             data : __data,
             beforeSend: function(){ 
                 $ocrendForm.data('locked', true) 
