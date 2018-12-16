@@ -14,3 +14,25 @@ use app\models as Model;
 $app->get('/', function() use($app) {
     return $app->json(array()); 
 });
+
+/**
+ * 
+ * Obtiene los items  el home
+ * 
+ **/
+
+$app->get('items/get', function() use($app) {
+	return $app['twig']->render('home/items');
+});
+
+/**
+ * 
+ * Obtiene los deportes
+ * 
+ **/
+
+$app->get('sports', function() use($app) {
+	$s = new Model\Sports;
+
+	return $app->json($s->get());
+});

@@ -40,6 +40,10 @@ $app->before(function () use ($app) {
     }
 });
 
+$app->register(new \Silex\Provider\TwigServiceProvider(), array(
+    'twig.path' => '../app/templates',
+));
+
 /**
  * Servidores autorizados para consumir la api.
  */

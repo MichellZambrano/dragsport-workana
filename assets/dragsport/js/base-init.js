@@ -495,12 +495,12 @@ $(document).ready(function () {
 			labelField: 'name',
 			searchField: ['name'],
 			options: [
-				{image: 'img/avatar30-sm.jpg', name: 'Marie Claire Stevens', message:'12 Friends in Common', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar54-sm.jpg', name: 'Marie Davidson', message:'4 Friends in Common', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar49-sm.jpg', name: 'Marina Polson', message:'Mutual Friend: Mathilda Brinker', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar36-sm.jpg', name: 'Ann Marie Gibson', message:'New York, NY', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar22-sm.jpg', name: 'Dave Marinara', message:'8 Friends in Common', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar41-sm.jpg', name: 'The Marina Bar', message:'Restaurant / Bar', icon:'olymp-star-icon'}
+				{image: 'assets/dragsport/img/avatar30-sm.jpg', name: 'Marie Claire Stevens', message:'12 Friends in Common', icon:'olymp-happy-face-icon'},
+				{image: 'assets/dragsport/img/avatar54-sm.jpg', name: 'Marie Davidson', message:'4 Friends in Common', icon:'olymp-happy-face-icon'},
+				{image: 'assets/dragsport/img/avatar49-sm.jpg', name: 'Marina Polson', message:'Mutual Friend: Mathilda Brinker', icon:'olymp-happy-face-icon'},
+				{image: 'assets/dragsport/img/avatar36-sm.jpg', name: 'Ann Marie Gibson', message:'New York, NY', icon:'olymp-happy-face-icon'},
+				{image: 'assets/dragsport/img/avatar22-sm.jpg', name: 'Dave Marinara', message:'8 Friends in Common', icon:'olymp-happy-face-icon'},
+				{image: 'assets/dragsport/img/avatar41-sm.jpg', name: 'The Marina Bar', message:'Restaurant / Bar', icon:'olymp-star-icon'}
 			],
 			render: {
 				option: function(item, escape) {
@@ -510,7 +510,7 @@ $(document).ready(function () {
 						(item.name ? '<span class="h6 notification-friend"></a>' + escape(item.name) + '</span>' : '') +
 						(item.message ? '<span class="chat-message-item">' + escape(item.message) + '</span>' : '') +
 						'</div>'+
-						(item.icon ? '<span class="notification-icon"><svg class="' + escape(item.icon) + '"><use xlink:href="icons/icons.svg#' + escape(item.icon) + '"></use></svg></span>' : '') +
+						(item.icon ? '<span class="notification-icon"><svg class="' + escape(item.icon) + '"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#' + escape(item.icon) + '"></use></svg></span>' : '') +
 						'</div>';
 				},
 				item: function(item, escape) {
