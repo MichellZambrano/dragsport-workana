@@ -11,3 +11,11 @@
 .modal-mx .btn{
 	margin-bottom: 0;
 }
+.control-block-button .btn-control .btn-img{
+border-radius: 50% !important ;
+border: 6px solid #fff;
+margin: 0 auto;
+overflow: hidden;
+width: 80px;
+height: 80px;
+}
