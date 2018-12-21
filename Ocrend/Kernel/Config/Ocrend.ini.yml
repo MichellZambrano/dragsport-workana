@@ -49,6 +49,13 @@ twitch:
   redirect_url: http://localhost/dragsport/start/tc
   token_url: https://api.twitch.tv/kraken/oauth2/token
   user_url: https://api.twitch.tv/kraken/user
+
+# Configuración api Twitter
+twitter:
+  client_id: XV14Bg6HlqKRQW8oZuengtkvD
+  client_secret: iMUnssxiGmSa3EnezhkKYadmhQe6o93DbfYdPZc8TkRAlcvr4E
+  redirect_url: http://localhost/dragsport/start/tw
+
   
 # Configuración del sitio
 build:
@@ -57,7 +64,7 @@ build:
   url: http://localhost/dragsport/
   timezone: America/La_Paz
   version: 3.0.1
-
+ 
 # Configuración de cookies
 sessions:
   lifetime: 3600
