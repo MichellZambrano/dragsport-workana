@@ -55,6 +55,12 @@ spotify:
   client_id: c5220154169e4085aadfad21dec009dc
   client_secret: d9e3650899a846368acbfbd9a96cb4f5
   redirect_url: http://localhost/dragsport/musicplaylist/login
+
+# Configuración api Twitter
+twitter:
+  client_id: XV14Bg6HlqKRQW8oZuengtkvD
+  client_secret: iMUnssxiGmSa3EnezhkKYadmhQe6o93DbfYdPZc8TkRAlcvr4E
+  redirect_url: http://localhost/dragsport/start/tw
   
 # Configuración del sitio
 build:
@@ -63,7 +69,7 @@ build:
   url: http://localhost/dragsport/
   timezone: America/La_Paz
   version: 3.0.1
-
+ 
 # Configuración de cookies
 sessions:
   lifetime: 3600

@@ -18,7 +18,7 @@ use Ocrend\Kernel\Models\IModels;
 use Ocrend\Kernel\Models\ModelsException;
 use Ocrend\Kernel\Models\Traits\DBModel;
 use Ocrend\Kernel\Router\IRouter;
-
+use Abraham\TwitterOAuth\TwitterOAuth;
 /**
  * Modelo Users
  */

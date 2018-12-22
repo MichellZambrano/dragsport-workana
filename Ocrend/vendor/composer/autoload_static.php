@@ -39,6 +39,10 @@ class ComposerStaticInit8717f8bd41e2851ee8528e88990f2038
         array (
             'Egulias\\EmailValidator\\' => 23,
         ),
+        'A' => 
+        array (
+            'Abraham\\TwitterOAuth\\' => 21,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -97,6 +101,10 @@ class ComposerStaticInit8717f8bd41e2851ee8528e88990f2038
         'Egulias\\EmailValidator\\' => 
         array (
             0 => __DIR__ . '/..' . '/egulias/email-validator/EmailValidator',
+        ),
+        'Abraham\\TwitterOAuth\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/abraham/twitteroauth/src',
         ),
     );
 
