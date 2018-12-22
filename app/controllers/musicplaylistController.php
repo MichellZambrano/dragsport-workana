@@ -17,14 +17,35 @@ use Ocrend\Kernel\Controllers\Controllers;
 use Ocrend\Kernel\Controllers\IControllers;
 use Ocrend\Kernel\Router\IRouter;
 
+
 /**
  * Controlador musicplaylist/
 */
 class musicplaylistController extends Controllers implements IControllers {
 
     public function __construct(IRouter $router) {
-        parent::__construct($router);
+        parent::__construct($router,array(
+        	'users_logged' => true
+        ));
+        global $config;
+
         $m = new Model\Musicplaylist;
-		$this->template->display('musicplaylist/musicplaylist');
+
+        switch ($this->method) {
+        	case 'login':
+        		$m->loginSpotify();
+        	break;
+        	case 'logout':
+        		$m->logout();
+        	break;
+        	default:
+        		$this->template->display('musicplaylist/musicplaylist', array(
+					'url' => $m->getUrl(),
+					'user' => $m->getUser()
+				));
+        	break;
+        }
+
+		
     }
 }

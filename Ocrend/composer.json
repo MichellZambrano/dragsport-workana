@@ -7,6 +7,7 @@
         "symfony/debug": "^3.3",
         "symfony/var-dumper": "^3.3",
         "swiftmailer/swiftmailer": "^6.0",
-        "symfony/console": "^3.3"
+        "symfony/console": "^3.3",
+        "jwilsson/spotify-web-api-php": "^2.6"
     }
 }

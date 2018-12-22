@@ -28,6 +28,7 @@ class ComposerStaticInit8717f8bd41e2851ee8528e88990f2038
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
+            'SpotifyWebAPI\\' => 14,
             'Silex\\' => 6,
         ),
         'P' => 
@@ -80,6 +81,10 @@ class ComposerStaticInit8717f8bd41e2851ee8528e88990f2038
         'Symfony\\Component\\Console\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
+        ),
+        'SpotifyWebAPI\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jwilsson/spotify-web-api-php/src',
         ),
         'Silex\\' => 
         array (

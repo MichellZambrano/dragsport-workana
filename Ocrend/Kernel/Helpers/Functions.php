@@ -344,6 +344,23 @@ final class Functions extends \Twig_Extension {
   }
 
   /**
+   * Convierte milisegundos en un tiempo
+   * 
+   * @param int $milisec : Milisegundos
+   *  
+   * @return string con el formato del tiempo
+   */
+  public static function msToTime($milisec){
+    $ms = ($milisec % 100);
+    $s = (($milisec - $ms) / 1000);
+    $secs = ($s % 60);
+    $s = (($s - $secs) / 60);
+    $mins = ($s % 60);
+
+    return $mins .':'. self::cero_izq($secs);
+  }
+
+  /**
    * Se obtiene de Twig_Extension y sirve para que cada función esté disponible como etiqueta en twig
    *
    * @return array con todas las funciones con sus respectivos nombres de acceso en plantillas twig
@@ -363,7 +380,7 @@ final class Functions extends \Twig_Extension {
        new \Twig_Function('cero_izq', array($this, 'cero_izq')),
        new \Twig_Function('last_day_month', array($this, 'last_day_month')),
        new \Twig_Function('str_to_time', array($this, 'str_to_time')),
-       new \Twig_Function('desde_date', array($this, 'desde_date'))
+       new \Twig_Function('msToTime', array($this, 'msToTime'))
     );
    }
 

@@ -23,7 +23,9 @@ use Ocrend\Kernel\Router\IRouter;
 class notificationsController extends Controllers implements IControllers {
 
     public function __construct(IRouter $router) {
-        parent::__construct($router);
+        parent::__construct($router,array(
+        	'users_logged' => true
+        ));
         $n = new Model\Notifications;
 		$this->template->display('notifications/notifications');
     }

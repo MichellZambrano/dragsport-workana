@@ -23,7 +23,9 @@ use Ocrend\Kernel\Router\IRouter;
 class favpagesController extends Controllers implements IControllers {
 
     public function __construct(IRouter $router) {
-        parent::__construct($router);
+        parent::__construct($router,array(
+        	'users_logged' => true
+        ));
         $f = new Model\Favpages;
         $this->template->display('favpages/favpages');
 		

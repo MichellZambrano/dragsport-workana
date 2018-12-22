@@ -23,7 +23,9 @@ use Ocrend\Kernel\Router\IRouter;
 class requestsController extends Controllers implements IControllers {
 
     public function __construct(IRouter $router) {
-        parent::__construct($router);
+        parent::__construct($router,array(
+        	'users_logged' => true
+        ));
         $r = new Model\Requests;
 		$this->template->display('requests/requests');
     }

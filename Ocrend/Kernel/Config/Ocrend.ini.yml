@@ -49,6 +49,12 @@ twitch:
   redirect_url: http://localhost/dragsport/start/tc
   token_url: https://api.twitch.tv/kraken/oauth2/token
   user_url: https://api.twitch.tv/kraken/user
+
+# Configuración api Spotify
+spotify:
+  client_id: c5220154169e4085aadfad21dec009dc
+  client_secret: d9e3650899a846368acbfbd9a96cb4f5
+  redirect_url: http://localhost/dragsport/musicplaylist/login
   
 # Configuración del sitio
 build:

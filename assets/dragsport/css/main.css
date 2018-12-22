@@ -6121,6 +6121,27 @@ ol {
     list-style: none;
     transition: all .3s ease; }
 
+ol.playlist-spf-dg{
+  max-height: 349.391px;
+  overflow-y: auto;
+}
+ol.playlist-spf-dg::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+ol.playlist-spf-dg::-webkit-scrollbar
+{
+  width: 6px;
+  background-color: #1ED760;
+}
+
+ol.playlist-spf-dg::-webkit-scrollbar-thumb
+{
+  background-color: #1ED760;
+}
+
 /* Init counter */
 ol li:before {
   position: relative;
