@@ -526,7 +526,11 @@ class Users extends Models implements IModels {
         }
     }
 
-
+    /**
+     * Obtiene la url de autenticación de twitter
+     * 
+     * @return string con la url
+     */
     public function TwitterUrl(){
         global $config, $session;
         # Conexión a Twitter
@@ -539,12 +543,27 @@ class Users extends Models implements IModels {
         return $twitter->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
     }
 
+    /**
+     * Obtiene un access token en base al anterior y el obtenido veryfier de la url
+     * 
+     * @param array $token: Tokens anteriores 
+     * @param string $oauth_verifier : Veryfier obtenido por get
+     * 
+     * @return Array con el nuevo access token
+     */
     private function getNewAccessToken($token, $oauth_verifier){
         global $config;
         $twitter = new TwitterOAuth($config['twitter']['consumer_key'], $config['twitter']['consumer_secret'], $token['oauth_token'], $token['oauth_token_secret']);
         return $twitter->oauth("oauth/access_token", ["oauth_verifier" => $oauth_verifier]);
     }
 
+    /**
+     * Obtiene la información del perfil del usuario 
+     * 
+     * @param array $access_token: Nuevo access token obtenido
+     * 
+     * @return objecto con la información del usuario
+     */
     private function getUserProfile($access_token){
         global $config;
         # Conexión a twitter
@@ -552,7 +571,11 @@ class Users extends Models implements IModels {
         # Información del usuario
         return $twitter->get('account/verify_credentials', ['tweet_mode' => 'extended', 'include_entities' => 'true']);
     }
-
+    /**
+     * Logea al usuario de twitter si este ya esta registrado en el sistema
+     * 
+     * @return array con mensaje de exito si está registrado | datos del usario a registrar
+     */
     public function TWLogin() {
         try {
             global $config, $session, $http;
@@ -604,7 +627,11 @@ class Users extends Models implements IModels {
             $session->remove('request_token');
         }
     }
-
+    /**
+     * Registra a un usuario de twitter en el sistema de dragsport
+     * 
+     * @return array
+     */
     public function TWRegister() {
          try {
             global $http;
@@ -637,9 +664,6 @@ class Users extends Models implements IModels {
            
            
             return array('success' => 1, 'message' => 'Connected successfully.');
-
-            
-
         } catch (ModelsException $e) {
             return array('success' => 0, 'message' => $e->getMessage());
         }
