@@ -58,8 +58,8 @@ spotify:
 
 # Configuración api Twitter
 twitter:
-  client_id: XV14Bg6HlqKRQW8oZuengtkvD
-  client_secret: iMUnssxiGmSa3EnezhkKYadmhQe6o93DbfYdPZc8TkRAlcvr4E
+  consumer_key: XV14Bg6HlqKRQW8oZuengtkvD
+  consumer_secret: iMUnssxiGmSa3EnezhkKYadmhQe6o93DbfYdPZc8TkRAlcvr4E
   redirect_url: http://localhost/dragsport/start/tw
   
 # Configuración del sitio

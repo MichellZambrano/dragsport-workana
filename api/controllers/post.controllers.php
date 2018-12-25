@@ -46,6 +46,17 @@ $app->post('/loginTC2', function() use($app) {
 });
 
 /**
+    * Inicio de sesión con Twitter
+    *
+    * @return json
+*/  
+$app->post('/twregister', function() use($app) {
+    $u = new Model\Users;   
+
+    return $app->json($u->TWRegister());   
+});
+
+/**
     * Registro de un usuario
     *
     * @return json
@@ -89,7 +100,7 @@ $app->post('/account', function() use($app) {
     return $app->json($a->foo());   
 });
 
-/**
+/**
  * Endpoint para messages
  *
  * @return json
@@ -99,7 +110,7 @@ $app->post('/messages', function() use($app) {
 
     return $app->json($m->foo());   
 });
-/**
+/**
  * Endpoint para requests
  *
  * @return json
@@ -109,7 +120,7 @@ $app->post('/requests', function() use($app) {
 
     return $app->json($r->foo());   
 });
-/**
+/**
  * Endpoint para favpages
  *
  * @return json

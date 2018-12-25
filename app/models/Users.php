@@ -356,6 +356,7 @@ class Users extends Models implements IModels {
             'gender' => $user['gender'],
             'login_with' => $login_with,
             'social_id' => $user['id'],
+            'image' => $user['picture'],
             'created_at' => time()
         ));
 
@@ -388,8 +389,10 @@ class Users extends Models implements IModels {
             }
             # En caso de no existir el usuario pero si la fecha y el género
             else if (false == $user) {
+                $data = $http->request->all();
+                $data['picture'] = 'https://graph.facebook.com/'.$http->request->get('id').'/picture?type=large';
                 # Validar usuario
-                $this->checkUser($http->request->all(), 'fb');
+                $this->checkUser($data, 'fb');
             }else{
                 # Iniciar sesión
                 $this->generateSession(array(
@@ -455,12 +458,21 @@ class Users extends Models implements IModels {
             'Authorization: OAuth ' . $token
         ));
 
+
         # COmprobar usuario
         $u = $this->getSocialUserById($user['_id'], 'tc');
 
         # En caso de no existir el usuario
         if (false == $u) {
-            return $user;
+            return array(
+                'route' => 'loginTC2',
+                'data' => array(
+                    '_id' => $user['_id'],
+                    'name' => $user['name'],
+                    'email' => $user['email'],
+                    'picture' => $user['logo']
+                )
+            );
         }
 
         # Iniciar sesión
@@ -487,7 +499,8 @@ class Users extends Models implements IModels {
                 'email' => $http->request->get('email'),
                 'datetimepicker' => $http->request->get('datetimepicker'),
                 'gender' => $http->request->get('gender'),
-                'favorite_sports' => $http->request->get('favorite_sports')
+                'favorite_sports' => $http->request->get('favorite_sports'),
+                'picture' => $http->request->get('picture') 
             );
 
             # Tdos los campos son requeridos
@@ -507,6 +520,125 @@ class Users extends Models implements IModels {
            
             return array('success' => 1, 'message' => 'Connected successfully.');
            
+
+        } catch (ModelsException $e) {
+            return array('success' => 0, 'message' => $e->getMessage());
+        }
+    }
+
+
+    public function TwitterUrl(){
+        global $config, $session;
+        # Conexión a Twitter
+        $twitter = new TwitterOAuth($config['twitter']['consumer_key'], $config['twitter']['consumer_secret']);
+        # Request Token
+        $request_token = $twitter->oauth('oauth/request_token', array('oauth_callback' => $config['twitter']['redirect_url']));
+        # Guardamos el request
+        $session->set('request_token', $request_token);
+        # Url de retorno
+        return $twitter->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
+    }
+
+    private function getNewAccessToken($token, $oauth_verifier){
+        global $config;
+        $twitter = new TwitterOAuth($config['twitter']['consumer_key'], $config['twitter']['consumer_secret'], $token['oauth_token'], $token['oauth_token_secret']);
+        return $twitter->oauth("oauth/access_token", ["oauth_verifier" => $oauth_verifier]);
+    }
+
+    private function getUserProfile($access_token){
+        global $config;
+        # Conexión a twitter
+        $twitter = new TwitterOAuth($config['twitter']['consumer_key'], $config['twitter']['consumer_secret'], $access_token['oauth_token'], $access_token['oauth_token_secret']);
+        # Información del usuario
+        return $twitter->get('account/verify_credentials', ['tweet_mode' => 'extended', 'include_entities' => 'true']);
+    }
+
+    public function TWLogin() {
+        try {
+            global $config, $session, $http;
+            # Obtenemos los tokens
+            $request_token = $session->get('request_token');
+
+            # Verificar posibles errores
+            if (null != $http->query->get('oauth_token') 
+            && $request_token['oauth_token'] !== $http->query->get('oauth_token')) {
+                throw new \Exception(true);        
+            }
+
+            # Eliminamos la sesión
+            $session->remove('request_token');
+
+            # Nuevo token 
+            $user =  $this->getUserProfile( $this->getNewAccessToken( $request_token, $http->query->get('oauth_verifier') ) );
+         
+            # Verificar si esta registrao
+            $u = $this->getSocialUserById($user->id, 'tw');
+
+            # Si no esta registrado completados los campos q faltan para registrar
+            if (false == $u) {
+                $return_data = array(
+                    'route' => 'twregister',
+                    'data' => array(
+                        'id' => $user->id,
+                        'name' => $user->name,
+                        'picture' => 'https://avatars.io/twitter/'.$user->screen_name.'/original'
+                        //'picture' => 'https://twitter.com/'.$user->screen_name.'/profile_image?size=original'
+                    )
+                );
+
+                if (property_exists($user, 'email')) {
+                    $return_data['data']['email'] = $user->email;
+                }
+                return $return_data;
+            }
+
+            # Iniciar sesión
+            $this->generateSession(array(
+                'id_user' => $u[0]['id_user']
+            ));
+            
+            return array('success' => true);
+           
+        } catch (\Exception $e) {
+            Helper\Functions::redir($config['build']['url'] . 'start/login');
+            $session->remove('request_token');
+        }
+    }
+
+    public function TWRegister() {
+         try {
+            global $http;
+
+            $data = array(
+                'id' => $http->request->get('id'),
+                'first_name' => $http->request->get('name'),
+                'last_name' => $http->request->get('last_name'),
+                'email' => $http->request->get('email'),
+                'datetimepicker' => $http->request->get('datetimepicker'),
+                'gender' => $http->request->get('gender'),
+                'favorite_sports' => $http->request->get('favorite_sports'),
+                'picture' => $http->request->get('picture')
+            );
+
+
+            # Tdos los campos son requeridos
+            if (Helper\Functions::e($data['id'], $data['first_name'], $data['last_name'], $data['email'], $data['datetimepicker'],$data['gender']) || !Helper\Functions::all_full($data['favorite_sports']) ) {
+                throw new ModelsException('All fields are required.');
+            }
+
+           
+            # Obtenemos el usuario si existe
+            $u = $this->getSocialUserById($data['id'], 'tw');
+
+            # Si no existe el usuario
+            if (false == $u) {
+                $this->checkUser($data, 'tw');
+            }
+           
+           
+            return array('success' => 1, 'message' => 'Connected successfully.');
+
+            
 
         } catch (ModelsException $e) {
             return array('success' => 0, 'message' => $e->getMessage());

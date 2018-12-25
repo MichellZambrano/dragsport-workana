@@ -193,7 +193,7 @@
 			
 					<div class="tab-pane {% if m == 'login' %}active{% endif %}" id="profile" role="tabpanel" data-mh="log-tab">
 						<div class="title h6">Login to your Account</div>
-						{% include 'start/login' %}
+						{% include 'start/login' with { twurl: twurl } only %}
 
 						<div class="modal-mx"></div>
 
@@ -207,6 +207,12 @@
 						              <div class="modal-body">
 						                <div class="row">
 							                <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+							                	{% if not tc_u.data.email is defined %}
+							                	<div class="form-group label-floating is-empty">
+													<label class="control-label">Your Email</label>
+													<input class="form-control" placeholder="" type="email" name="email">
+												</div>
+							                	{% endif %}
 												<div class="form-group label-floating is-empty">
 													<label class="control-label">Last Name</label>
 													<input class="form-control" placeholder="" type="text" name="last_name">
@@ -309,6 +315,7 @@
 <script src="assets/jscontrollers/start/lostpass.js"></script>
 <script src="assets/jscontrollers/start/FBlogin.js"></script>
 
+
 {% if null != tc_u and null == tc_u.success %}
 <script>
 	$('#lastStep').modal({
@@ -322,10 +329,12 @@
 	    var $Form = $(this);
 	    var __data = new FormData();
 
-	    __data.append('display_name', '{{ tc_u.display_name }}');
-	    __data.append('_id', '{{ tc_u._id }}');
-	    __data.append('name', '{{ tc_u.name }}');
-	    __data.append('email', '{{ tc_u.email }}');
+
+	    {% for i,e in tc_u.data %}
+    	 __data.append('{{ i }}', '{{ e }}');
+		{% endfor %}
+
+	   
 
 	    $Form.serializeArray().map(function(x){__data.append(x.name, x.value);}); 
 
@@ -335,7 +344,7 @@
 
 	      $.ajax({
 	          type : "POST",
-	          url : "api/loginTC2",
+	          url : "api/{{ tc_u.route }}",
 	          contentType:false,
       		  processData:false,
 	          data : __data,
