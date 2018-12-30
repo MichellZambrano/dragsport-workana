@@ -130,3 +130,13 @@ $app->post('/favpages', function() use($app) {
 
     return $app->json($f->foo());   
 });
+/**
+ * Endpoint para youtube
+ *
+ * @return json
+*/
+$app->post('/youtube', function() use($app) {
+    $y = new Model\Youtube; 
+
+    return $app->json($y->foo());   
+});

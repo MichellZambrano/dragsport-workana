@@ -688,7 +688,7 @@ $(document).ready(function () {
 
 
 CRUMINA.mediaPopups = function () {
-	$('.play-video').magnificPopup({
+	$('.play-video, .video-play').magnificPopup({
 		disableOn: 700,
 		type: 'iframe',
 		mainClass: 'mfp-fade',

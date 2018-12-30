@@ -1,0 +1,278 @@
+<?php
+
+/* overall/layout.twig */
+class __TwigTemplate_7e4fa70851718f6d1b4947cf20494a29f1dc951e8f745cbe357d83ec2e1062dd extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = false;
+
+        $this->blocks = array(
+            'appHeader' => array($this, 'block_appHeader'),
+            'appBody' => array($this, 'block_appBody'),
+            'appFooter' => array($this, 'block_appFooter'),
+        );
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        // line 1
+        echo "<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    
+    ";
+        // line 5
+        echo $this->env->getExtension('Ocrend\Kernel\Helpers\Functions')->base_assets();
+        echo "
+    <title>Profile Page</title>
+
+    <!-- Required meta tags always come first -->
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">
+
+    <!-- Main Font -->
+    <script src=\"assets/dragsport/js/webfontloader.min.js\"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Roboto:300,400,500,700:latin']
+            }
+        });
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-reboot.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-grid.css\">
+
+    ";
+        // line 28
+        $this->displayBlock('appHeader', $context, $blocks);
+        // line 29
+        echo "    <!-- Main Styles CSS -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/main.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/fonts.min.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/dragsport.css\">
+    
+</head>
+<body>
+
+
+";
+        // line 39
+        $this->loadTemplate("overall/leftSidebar", "overall/layout.twig", 39)->display($context);
+        // line 40
+        echo "
+";
+        // line 42
+        $this->loadTemplate("overall/rightSidebar", "overall/layout.twig", 42)->display($context);
+        // line 43
+        echo "
+
+";
+        // line 46
+        $this->loadTemplate("overall/topnav", "overall/layout.twig", 46)->display($context);
+        // line 47
+        echo "
+";
+        // line 49
+        $this->displayBlock('appBody', $context, $blocks);
+        // line 50
+        echo "
+";
+        // line 52
+        $this->loadTemplate("overall/chat", "overall/layout.twig", 52)->display($context);
+        // line 53
+        echo "
+
+<!-- JS Scripts -->
+<script src=\"assets/config/config.json\"></script>
+<script src=\"assets/jscontrollers/overall/config.js\"></script>
+<script src=\"assets/dragsport/js/jquery-3.2.1.js\"></script>
+<script src=\"assets/dragsport/js/jquery.appear.js\"></script>
+<script src=\"assets/dragsport/js/jquery.mousewheel.js\"></script>
+<script src=\"assets/dragsport/js/perfect-scrollbar.js\"></script>
+<script src=\"assets/dragsport/js/jquery.matchHeight.js\"></script>
+<script src=\"assets/dragsport/js/svgxuse.js\"></script>
+<script src=\"assets/dragsport/js/imagesloaded.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/Headroom.js\"></script>
+<script src=\"assets/dragsport/js/velocity.js\"></script>
+<script src=\"assets/dragsport/js/ScrollMagic.js\"></script>
+<script src=\"assets/dragsport/js/jquery.waypoints.js\"></script>
+<script src=\"assets/dragsport/js/jquery.countTo.js\"></script>
+<script src=\"assets/dragsport/js/popper.min.js\"></script>
+<script src=\"assets/dragsport/js/material.min.js\"></script>
+<script src=\"assets/dragsport/js/bootstrap-select.js\"></script>
+<script src=\"assets/dragsport/js/smooth-scroll.js\"></script>
+<script src=\"assets/dragsport/js/selectize.js\"></script>
+<script src=\"assets/dragsport/js/swiper.jquery.js\"></script>
+<script src=\"assets/dragsport/js/moment.js\"></script>
+<script src=\"assets/dragsport/js/daterangepicker.js\"></script>
+<script src=\"assets/dragsport/js/simplecalendar.js\"></script>
+<script src=\"assets/dragsport/js/fullcalendar.js\"></script>
+<script src=\"assets/dragsport/js/isotope.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/ajax-pagination.js\"></script>
+<script src=\"assets/dragsport/js/Chart.js\"></script>
+<script src=\"assets/dragsport/js/chartjs-plugin-deferred.js\"></script>
+<script src=\"assets/dragsport/js/circle-progress.js\"></script>
+<script src=\"assets/dragsport/js/loader.js\"></script>
+<script src=\"assets/dragsport/js/run-chart.js\"></script>
+<script src=\"assets/dragsport/js/jquery.magnific-popup.js\"></script>
+<script src=\"assets/dragsport/js/jquery.gifplayer.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-and-player.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-playlist-plugin.min.js\"></script>
+<script src=\"assets/dragsport/js/sticky-sidebar.js\"></script>
+";
+        // line 92
+        $this->displayBlock('appFooter', $context, $blocks);
+        // line 93
+        echo "
+<script src=\"assets/dragsport/js/base-init.js\"></script>
+<script defer src=\"assets/dragsport/fonts/fontawesome-all.js\"></script>
+
+<script src=\"assets/dragsport/Bootstrap/dist/js/bootstrap.bundle.js\"></script>
+
+
+</body>
+</html>";
+    }
+
+    // line 28
+    public function block_appHeader($context, array $blocks = array())
+    {
+    }
+
+    // line 49
+    public function block_appBody($context, array $blocks = array())
+    {
+    }
+
+    // line 92
+    public function block_appFooter($context, array $blocks = array())
+    {
+    }
+
+    public function getTemplateName()
+    {
+        return "overall/layout.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  155 => 92,  150 => 49,  145 => 28,  133 => 93,  131 => 92,  90 => 53,  88 => 52,  85 => 50,  83 => 49,  80 => 47,  78 => 46,  74 => 43,  72 => 42,  69 => 40,  67 => 39,  56 => 29,  54 => 28,  28 => 5,  22 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+    
+    {{ base_assets()|raw }}
+    <title>Profile Page</title>
+
+    <!-- Required meta tags always come first -->
+    <meta charset=\"utf-8\">
+    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">
+    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">
+
+    <!-- Main Font -->
+    <script src=\"assets/dragsport/js/webfontloader.min.js\"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Roboto:300,400,500,700:latin']
+            }
+        });
+    </script>
+
+    <!-- Bootstrap CSS -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-reboot.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/Bootstrap/dist/css/bootstrap-grid.css\">
+
+    {% block appHeader %}{% endblock %}
+    <!-- Main Styles CSS -->
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/main.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/fonts.min.css\">
+    <link rel=\"stylesheet\" type=\"text/css\" href=\"assets/dragsport/css/dragsport.css\">
+    
+</head>
+<body>
+
+
+{# Barra lateral izquierda #}
+{% include 'overall/leftSidebar' %}
+
+{# Barra lateral Derecha #}
+{% include 'overall/rightSidebar' %}
+
+
+{# Header #}
+{% include 'overall/topnav' %}
+
+{# Contenido #}
+{% block appBody %}{% endblock %}
+
+{# Chat Box #}
+{% include 'overall/chat' %}
+
+
+<!-- JS Scripts -->
+<script src=\"assets/config/config.json\"></script>
+<script src=\"assets/jscontrollers/overall/config.js\"></script>
+<script src=\"assets/dragsport/js/jquery-3.2.1.js\"></script>
+<script src=\"assets/dragsport/js/jquery.appear.js\"></script>
+<script src=\"assets/dragsport/js/jquery.mousewheel.js\"></script>
+<script src=\"assets/dragsport/js/perfect-scrollbar.js\"></script>
+<script src=\"assets/dragsport/js/jquery.matchHeight.js\"></script>
+<script src=\"assets/dragsport/js/svgxuse.js\"></script>
+<script src=\"assets/dragsport/js/imagesloaded.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/Headroom.js\"></script>
+<script src=\"assets/dragsport/js/velocity.js\"></script>
+<script src=\"assets/dragsport/js/ScrollMagic.js\"></script>
+<script src=\"assets/dragsport/js/jquery.waypoints.js\"></script>
+<script src=\"assets/dragsport/js/jquery.countTo.js\"></script>
+<script src=\"assets/dragsport/js/popper.min.js\"></script>
+<script src=\"assets/dragsport/js/material.min.js\"></script>
+<script src=\"assets/dragsport/js/bootstrap-select.js\"></script>
+<script src=\"assets/dragsport/js/smooth-scroll.js\"></script>
+<script src=\"assets/dragsport/js/selectize.js\"></script>
+<script src=\"assets/dragsport/js/swiper.jquery.js\"></script>
+<script src=\"assets/dragsport/js/moment.js\"></script>
+<script src=\"assets/dragsport/js/daterangepicker.js\"></script>
+<script src=\"assets/dragsport/js/simplecalendar.js\"></script>
+<script src=\"assets/dragsport/js/fullcalendar.js\"></script>
+<script src=\"assets/dragsport/js/isotope.pkgd.js\"></script>
+<script src=\"assets/dragsport/js/ajax-pagination.js\"></script>
+<script src=\"assets/dragsport/js/Chart.js\"></script>
+<script src=\"assets/dragsport/js/chartjs-plugin-deferred.js\"></script>
+<script src=\"assets/dragsport/js/circle-progress.js\"></script>
+<script src=\"assets/dragsport/js/loader.js\"></script>
+<script src=\"assets/dragsport/js/run-chart.js\"></script>
+<script src=\"assets/dragsport/js/jquery.magnific-popup.js\"></script>
+<script src=\"assets/dragsport/js/jquery.gifplayer.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-and-player.js\"></script>
+<script src=\"assets/dragsport/js/mediaelement-playlist-plugin.min.js\"></script>
+<script src=\"assets/dragsport/js/sticky-sidebar.js\"></script>
+{% block appFooter %}{% endblock %}
+
+<script src=\"assets/dragsport/js/base-init.js\"></script>
+<script defer src=\"assets/dragsport/fonts/fontawesome-all.js\"></script>
+
+<script src=\"assets/dragsport/Bootstrap/dist/js/bootstrap.bundle.js\"></script>
+
+
+</body>
+</html>", "overall/layout.twig", "C:\\xampp\\htdocs\\dragsport\\app\\templates\\overall\\layout.twig");
+    }
+}

@@ -1,0 +1,153 @@
+{% extends 'overall/layout' %}
+{% block appBody %}
+<!-- Main Header Groups -->
+
+<div class="main-header">
+	<div class="content-bg-wrap bg-group-youtube"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+				<div class="main-header-content">
+					<h1>Youtube</h1>
+					<p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
+	 new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<img class="img-bottom" src="assets/dragsport/img/group-bottom.png" alt="friends">
+</div>
+
+<!-- ... end Main Header Groups -->
+
+{# <div class="container">
+	<div class="row">
+
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+			<div class="ui-block meta-card">
+				<div class="ui-block-content">
+					<ul class="statistics-list-count">
+						<li>
+							<div class="points">
+								<span>
+									Last Month Visitors
+								</span>
+							</div>
+							<div class="count-stat">28.432
+								<span class="indicator positive"> + 4.207</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+			<div class="ui-block meta-card youtube">
+				<a href="https://youtube.com/" target="_blank" class="card-link">
+					<div class="ui-block-content">
+						<ul class="statistics-list-count">
+							<li>
+								<div class="points">
+									<span>
+										YouTube Page
+									</span>
+								</div>
+								<div class="count-stat"><i class="fab fa-youtube icon"></i>
+									<span> YouTube</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+			<div class="ui-block meta-card">
+				<div class="ui-block-content">
+					<ul class="statistics-list-count">
+						<li>
+							<div class="points">
+								<span>
+									Last Month Posts
+								</span>
+							</div>
+							<div class="count-stat">16.502
+								<span class="indicator positive"> + 1.056</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
+			<div class="ui-block meta-card">
+				<div class="ui-block-content">
+					<ul class="statistics-list-count">
+						<li>
+							<div class="points">
+								<span>
+									Last Year Posts
+								</span>
+							</div>
+							<div class="count-stat">390.822
+								<span class="indicator positive"> + 2.847</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div> #}
+
+
+
+<div class="container">
+	
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex" data-mh="pie-chart">
+				<div class="ui-block-title">
+					<div class="h6 title">DragSport Youtube Videos</div>
+				</div>
+
+				<div class="ui-block-content" id="youtube-content">
+					<div class="youtube-loading-content">
+						<div class="title d-flex align-items-center align-content-center justify-content-center">
+							<i class="fab fa-youtube icon"></i>
+							<span>YouTube</span>
+						</div>
+						
+						<div class="youtube-loader d-flex align-items-center align-content-center justify-content-center">
+							<div class="spinner">
+							  <div class="spinner-circle spinner-circle-outer"></div>
+							  <div class="spinner-circle-off spinner-circle-inner"></div>
+							  <div class="spinner-circle spinner-circle-single-1"></div>
+							  <div class="spinner-circle spinner-circle-single-2"></div>
+							</div>
+
+							<div class="loading-videos-channel">Loading Videos Channel</div>
+						</div>
+					</div>
+					<div class="row" id="youtube-container"></div>
+				</div>
+
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+{% endblock %}
+
+{% block appFooter %}
+
+<script src="assets/dragsport/vendor/jquery-ajax-progress/js/jquery.ajax-progress.js"></script>
+<script src="assets/jscontrollers/youtube/youtube.js"></script>
+
+{% endblock %}

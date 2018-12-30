@@ -532,15 +532,20 @@ class Users extends Models implements IModels {
      * @return string con la url
      */
     public function TwitterUrl(){
-        global $config, $session;
-        # Conexión a Twitter
-        $twitter = new TwitterOAuth($config['twitter']['consumer_key'], $config['twitter']['consumer_secret']);
-        # Request Token
-        $request_token = $twitter->oauth('oauth/request_token', array('oauth_callback' => $config['twitter']['redirect_url']));
-        # Guardamos el request
-        $session->set('request_token', $request_token);
-        # Url de retorno
-        return $twitter->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
+        try {
+            global $config, $session;
+            # Conexión a Twitter
+            $twitter = new TwitterOAuth($config['twitter']['consumer_key'], $config['twitter']['consumer_secret']);
+            # Request Token
+            $request_token = $twitter->oauth('oauth/request_token', array('oauth_callback' => $config['twitter']['redirect_url']));
+            # Guardamos el request
+            $session->set('request_token', $request_token);
+            # Url de retorno
+            return $twitter->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
+        } catch (\Exception $e) {
+            return 'javascript:void(0)';
+        }
+        
     }
 
     /**
