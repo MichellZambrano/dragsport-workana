@@ -1,0 +1,230 @@
+<?php
+
+/* shopify/shopify.twig */
+class __TwigTemplate_99435ecca51d3eb068f24682bcc76355bf6978a2bb901daa340b905713b89d42 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("overall/layout", "shopify/shopify.twig", 1);
+        $this->blocks = array(
+            'appHeader' => array($this, 'block_appHeader'),
+            'appBody' => array($this, 'block_appBody'),
+            'appFooter' => array($this, 'block_appFooter'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "overall/layout";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_appHeader($context, array $blocks = array())
+    {
+        // line 3
+        echo "<link rel=\"stylesheet\" href=\"assets/dragsport/css/store.css\">
+";
+    }
+
+    // line 5
+    public function block_appBody($context, array $blocks = array())
+    {
+        // line 6
+        echo "<!-- Main Header Groups -->
+
+<div class=\"main-header\">
+\t<div class=\"content-bg-wrap bg-group-youtube\"></div>
+\t<div class=\"container\">
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col col-lg-8 m-auto col-md-8 col-sm-12 col-12\">
+\t\t\t\t<div class=\"main-header-content\">
+\t\t\t\t\t<h1>Shopify</h1>
+\t\t\t\t\t<p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
+\t new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+\t<img class=\"img-bottom\" src=\"assets/dragsport/img/group-bottom.png\" alt=\"friends\">
+</div>
+
+
+<div class=\"container\">
+\t
+\t<div class=\"row\">
+\t\t<div class=\"col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t\t<div class=\"ui-block responsive-flex\" data-mh=\"pie-chart\">
+\t\t\t\t<div class=\"ui-block-title\">
+\t\t\t\t\t<div class=\"h6 title\">DragSport Shopify Store</div>
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"ui-block-content\">
+
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<div class=\"col-xl-2 col-lg-3 col-md-3 col-sm-6 col-12\">
+\t\t\t<div class=\"product-box\">
+\t\t\t\t<div class=\"product-box-container\">
+\t\t\t\t    <img src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/furniture.jpg\" alt=\"cookies\" class=\"hero-image\" />
+\t\t\t\t    
+\t\t\t\t    <div class=\"price\">\$ <div>95</div></div>
+\t\t\t\t    
+\t\t\t\t    <div class=\"information\">
+\t\t\t\t      \t<div class=\"name\">Amazing Furniture</div>
+\t\t\t\t      \t<div class=\"store\">ikea.com</div>
+\t\t\t\t      \t<a href=\"#\" class=\"button\">Purchase Product</a>
+\t\t\t\t    </div> 
+\t\t\t\t</div> 
+\t\t\t</div> 
+\t\t</div>
+
+
+\t\t
+\t</div>
+</div>
+
+";
+    }
+
+    // line 64
+    public function block_appFooter($context, array $blocks = array())
+    {
+        // line 65
+        echo "
+
+<script src=\"http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js\"></script>
+<script src=\"assets/dragsport/vendor/velocity/velocity.min.js\"></script>
+<script src=\"assets/jscontrollers/shopify/store.js\"></script>
+<script>
+\t
+\tconst client = new ShopifyBuy.buildClient({
+\t  \tdomain: 'dragsportstoretest.myshopify.com',
+\t  \tstorefrontAccessToken: '1ab3ca3fdea76b6c35357400eaaf9188'
+\t});
+\t
+\tclient.product.fetchAll().then((products) => {
+\t  \$.each(products, (i, product) => {
+\t  \tconsole.log(product);
+\t  \t
+\t  });
+\t});
+\t
+</script> 
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "shopify/shopify.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  104 => 65,  101 => 64,  41 => 6,  38 => 5,  33 => 3,  30 => 2,  11 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{% extends 'overall/layout' %}
+{% block appHeader %}
+<link rel=\"stylesheet\" href=\"assets/dragsport/css/store.css\">
+{% endblock %}
+{% block appBody %}
+<!-- Main Header Groups -->
+
+<div class=\"main-header\">
+\t<div class=\"content-bg-wrap bg-group-youtube\"></div>
+\t<div class=\"container\">
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col col-lg-8 m-auto col-md-8 col-sm-12 col-12\">
+\t\t\t\t<div class=\"main-header-content\">
+\t\t\t\t\t<h1>Shopify</h1>
+\t\t\t\t\t<p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
+\t new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+\t<img class=\"img-bottom\" src=\"assets/dragsport/img/group-bottom.png\" alt=\"friends\">
+</div>
+
+
+<div class=\"container\">
+\t
+\t<div class=\"row\">
+\t\t<div class=\"col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t\t<div class=\"ui-block responsive-flex\" data-mh=\"pie-chart\">
+\t\t\t\t<div class=\"ui-block-title\">
+\t\t\t\t\t<div class=\"h6 title\">DragSport Shopify Store</div>
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"ui-block-content\">
+
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+
+\t\t<div class=\"col-xl-2 col-lg-3 col-md-3 col-sm-6 col-12\">
+\t\t\t<div class=\"product-box\">
+\t\t\t\t<div class=\"product-box-container\">
+\t\t\t\t    <img src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/195612/furniture.jpg\" alt=\"cookies\" class=\"hero-image\" />
+\t\t\t\t    
+\t\t\t\t    <div class=\"price\">\$ <div>95</div></div>
+\t\t\t\t    
+\t\t\t\t    <div class=\"information\">
+\t\t\t\t      \t<div class=\"name\">Amazing Furniture</div>
+\t\t\t\t      \t<div class=\"store\">ikea.com</div>
+\t\t\t\t      \t<a href=\"#\" class=\"button\">Purchase Product</a>
+\t\t\t\t    </div> 
+\t\t\t\t</div> 
+\t\t\t</div> 
+\t\t</div>
+
+
+\t\t
+\t</div>
+</div>
+
+{% endblock %}
+
+{% block appFooter %}
+
+
+<script src=\"http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js\"></script>
+<script src=\"assets/dragsport/vendor/velocity/velocity.min.js\"></script>
+<script src=\"assets/jscontrollers/shopify/store.js\"></script>
+<script>
+\t
+\tconst client = new ShopifyBuy.buildClient({
+\t  \tdomain: 'dragsportstoretest.myshopify.com',
+\t  \tstorefrontAccessToken: '1ab3ca3fdea76b6c35357400eaaf9188'
+\t});
+\t
+\tclient.product.fetchAll().then((products) => {
+\t  \$.each(products, (i, product) => {
+\t  \tconsole.log(product);
+\t  \t
+\t  });
+\t});
+\t
+</script> 
+{% endblock %}", "shopify/shopify.twig", "C:\\xampp\\htdocs\\dragsport\\app\\templates\\shopify\\shopify.twig");
+    }
+}

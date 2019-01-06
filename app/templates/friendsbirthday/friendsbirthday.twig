@@ -1,6 +1,10 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Friends Brithday{% endblock %}
+
 {% block appBody %}
-<!-- Main Header Birthday -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: "Friends's Brithdays" } only %}
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-birthday"></div>

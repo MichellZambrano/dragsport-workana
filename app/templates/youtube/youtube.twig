@@ -1,6 +1,10 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Youtube Videos{% endblock %}
+
 {% block appBody %}
-<!-- Main Header Groups -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Youtube Videos' } only %}
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-group-youtube"></div>

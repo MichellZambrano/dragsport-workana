@@ -1,6 +1,10 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Weather Widget{% endblock %}
+
 {% block appBody %}
-<!-- Main Header Weather -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Weather Widget' } only %}
 
 <div class="main-header main-header-weather">
 	<div class="content-bg-wrap bg-weather"></div>

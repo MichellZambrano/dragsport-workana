@@ -1,5 +1,12 @@
 {% extends 'overall/account' %}
 
+{% block page_title %}Fav Page - Settings And Create Popup{% endblock %}
+
+{% block TopNav %}
+	{# Header #}
+    {% include 'overall/topnav' with {page_title: 'Yout Account' } only %}
+{% endblock %}
+
 {% block appContent %}
 <div class="ui-block">
 	<div class="ui-block-title">

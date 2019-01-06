@@ -1,6 +1,10 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Comunity Badges{% endblock %}
+
 {% block appBody %}
-<!-- Main Header Badges -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Comunity Badges' } only %}
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-badges"></div>

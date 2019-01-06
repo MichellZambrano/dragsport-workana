@@ -1,6 +1,10 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Calendar and Events - Create Event POPUP (Private/Public){% endblock %}
+
 {% block appBody %}
-<!-- Main Header Events -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Calendar & Events' } only %}
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-events"></div>

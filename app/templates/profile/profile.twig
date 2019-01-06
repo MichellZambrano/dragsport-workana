@@ -1,6 +1,9 @@
 {% extends 'overall/layout' %}
-
+{% block page_title %}Profile{% endblock %}
 {% block appBody %}
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'profile' } only %}
     
 {# Menu del perfil #}
 {% include 'overall/profile_menu' with { m: m } only %}

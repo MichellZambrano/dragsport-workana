@@ -140,3 +140,13 @@ $app->post('/youtube', function() use($app) {
 
     return $app->json($y->foo());   
 });
+/**
+ * Endpoint para shopify
+ *
+ * @return json
+*/
+$app->post('/shopify', function() use($app) {
+    $s = new Model\Shopify; 
+
+    return $app->json($s->foo());   
+});

@@ -1,0 +1,180 @@
+<?php
+
+/* shopify/shopify.twig */
+class __TwigTemplate_99435ecca51d3eb068f24682bcc76355bf6978a2bb901daa340b905713b89d42 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        // line 1
+        $this->parent = $this->loadTemplate("overall/layout", "shopify/shopify.twig", 1);
+        $this->blocks = array(
+            'appBody' => array($this, 'block_appBody'),
+            'appFooter' => array($this, 'block_appFooter'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "overall/layout";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 2
+    public function block_appBody($context, array $blocks = array())
+    {
+        // line 3
+        echo "<!-- Main Header Groups -->
+
+<div class=\"main-header\">
+\t<div class=\"content-bg-wrap bg-group-youtube\"></div>
+\t<div class=\"container\">
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col col-lg-8 m-auto col-md-8 col-sm-12 col-12\">
+\t\t\t\t<div class=\"main-header-content\">
+\t\t\t\t\t<h1>Shopify</h1>
+\t\t\t\t\t<p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
+\t new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+\t<img class=\"img-bottom\" src=\"assets/dragsport/img/group-bottom.png\" alt=\"friends\">
+</div>
+
+
+<div class=\"container\">
+\t
+\t<div class=\"row\">
+\t\t<div class=\"col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t\t<div class=\"ui-block responsive-flex\" data-mh=\"pie-chart\">
+\t\t\t\t<div class=\"ui-block-title\">
+\t\t\t\t\t<div class=\"h6 title\">DragSport Shopify Store</div>
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"ui-block-content\" id=\"youtube-content\">
+\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+\t\t\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+\t\t\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+\t\t\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+\t\t\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+\t\t\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\t\t\t\t</div>
+
+\t\t\t</div>
+\t\t</div>
+\t\t
+\t</div>
+</div>
+
+";
+    }
+
+    // line 49
+    public function block_appFooter($context, array $blocks = array())
+    {
+        // line 50
+        echo "<script src=\"http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js\"></script>
+<script>
+\tconst shopClient = ShopifyBuy.buildClient({
+\t\tdomain: 'https://teststoreapi123.myshopify.com/',
+  \t\tstorefrontAccessToken: 'c0d24b345bbd965d04518d4f586820b0'
+\t   
+\t});
+\t// Fetch all products in your shop
+\tshopClient.product.fetchAll().then((products) => {
+\t  // Do something with the products
+\t  console.log(products);
+\t});
+</script>
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "shopify/shopify.twig";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  83 => 50,  80 => 49,  32 => 3,  29 => 2,  11 => 1,);
+    }
+
+    public function getSourceContext()
+    {
+        return new Twig_Source("{% extends 'overall/layout' %}
+{% block appBody %}
+<!-- Main Header Groups -->
+
+<div class=\"main-header\">
+\t<div class=\"content-bg-wrap bg-group-youtube\"></div>
+\t<div class=\"container\">
+\t\t<div class=\"row\">
+\t\t\t<div class=\"col col-lg-8 m-auto col-md-8 col-sm-12 col-12\">
+\t\t\t\t<div class=\"main-header-content\">
+\t\t\t\t\t<h1>Shopify</h1>
+\t\t\t\t\t<p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
+\t new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
+\t</div>
+
+\t<img class=\"img-bottom\" src=\"assets/dragsport/img/group-bottom.png\" alt=\"friends\">
+</div>
+
+
+<div class=\"container\">
+\t
+\t<div class=\"row\">
+\t\t<div class=\"col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12\">
+\t\t\t<div class=\"ui-block responsive-flex\" data-mh=\"pie-chart\">
+\t\t\t\t<div class=\"ui-block-title\">
+\t\t\t\t\t<div class=\"h6 title\">DragSport Shopify Store</div>
+\t\t\t\t</div>
+
+\t\t\t\t<div class=\"ui-block-content\" id=\"youtube-content\">
+\t\t\t\t\tLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+\t\t\t\t\ttempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+\t\t\t\t\tquis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+\t\t\t\t\tconsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+\t\t\t\t\tcillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+\t\t\t\t\tproident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\t\t\t\t</div>
+
+\t\t\t</div>
+\t\t</div>
+\t\t
+\t</div>
+</div>
+
+{% endblock %}
+
+{% block appFooter %}
+<script src=\"http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js\"></script>
+<script>
+\tconst shopClient = ShopifyBuy.buildClient({
+\t\tdomain: 'https://teststoreapi123.myshopify.com/',
+  \t\tstorefrontAccessToken: 'c0d24b345bbd965d04518d4f586820b0'
+\t   
+\t});
+\t// Fetch all products in your shop
+\tshopClient.product.fetchAll().then((products) => {
+\t  // Do something with the products
+\t  console.log(products);
+\t});
+</script>
+{% endblock %}", "shopify/shopify.twig", "C:\\xampp\\htdocs\\dragsport\\app\\templates\\shopify\\shopify.twig");
+    }
+}

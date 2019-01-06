@@ -3,7 +3,7 @@
 <head>
     
     {{ base_assets()|raw }}
-    <title>Profile Page</title>
+    <title>{% block page_title %}{% endblock %}</title>
 
     <!-- Required meta tags always come first -->
     <meta charset="utf-8">
@@ -41,9 +41,6 @@
 {# Barra lateral Derecha #}
 {% include 'overall/rightSidebar' %}
 
-
-{# Header #}
-{% include 'overall/topnav' %}
 
 {# Contenido #}
 {% block appBody %}{% endblock %}

@@ -61,6 +61,12 @@ twitter:
   consumer_key: XV14Bg6HlqKRQW8oZuengtkvD
   consumer_secret: iMUnssxiGmSa3EnezhkKYadmhQe6o93DbfYdPZc8TkRAlcvr4E
   redirect_url: http://localhost/dragsport/start/tw
+
+# Configuración api Shopify
+shopify:
+  api_key: c0d24b345bbd965d04518d4f586820b0
+  password: 0205ed8d4b75192bb262c758836ff2c3
+  shop: teststoreapi123.myshopify.com
   
 # Configuración del sitio
 build:

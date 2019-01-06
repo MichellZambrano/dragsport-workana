@@ -1,6 +1,13 @@
 {% extends 'overall/account' %}
+{% block page_title %}Yout Account - Personal Information{% endblock %}
+
+{% block TopNav %}
+	{# Header #}
+    {% include 'overall/topnav' with {page_title: 'Yout Account' } only %}
+{% endblock %}
 
 {% block appContent %}
+
 <div class="ui-block">
 	<div class="ui-block-title">
 		<h6 class="title">Personal Information</h6>

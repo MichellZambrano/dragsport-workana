@@ -1,6 +1,14 @@
 {% extends 'overall/account' %}
+{% block page_title %}Yout Account - Education And Employement{% endblock %}
+
+{% block TopNav %}
+	{# Header #}
+    {% include 'overall/topnav' with {page_title: 'Yout Account' } only %}
+{% endblock %}
 
 {% block appContent %}
+
+
 <div class="ui-block">
 	<div class="ui-block-title">
 		<h6 class="title">Your Education History</h6>

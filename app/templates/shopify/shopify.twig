@@ -1,0 +1,106 @@
+{% extends 'overall/layout' %}
+{% block page_title %}DragSport Store{% endblock %}
+
+{% block appHeader %}
+<link rel="stylesheet" href="assets/dragsport/css/store.css">
+{% endblock %}
+
+{% block appBody %}
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'DragSport Store' } only %}
+
+<div class="main-header">
+	<div class="content-bg-wrap bg-group-youtube"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+				<div class="main-header-content">
+					<h1>Shopify</h1>
+					<p>Welcome to your stats and analytics dashboard! Here you’l see all your profile stats like: visits,
+	 new friends, average comments, likes, social media reach, annual graphs, and much more!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<img class="img-bottom" src="assets/dragsport/img/group-bottom.png" alt="friends">
+</div>
+
+
+<div class="container">
+	<div class="ui-block">
+		<div class="birthday-item inline-items badges">
+			<div class="author-thumb">
+				<img class="shopify-icon" src="assets/dragsport/img/shopify.png" alt="author">
+			</div>
+			<div class="birthday-author-name">
+				<a href="#" class="h6 author-name">DragSport Shopify Store</a>
+				<div class="birthday-date">All products in our store.</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="info-products">
+		<div class="ui-block block-product">
+			<div class="row">
+				<div class="col-12 py-5">
+					<div class="youtube-loading-content">
+							<div class="title d-flex align-items-center align-content-center justify-content-center">
+								<img class="shopify-icon" src="assets/dragsport/img/shopify.png" alt="author">
+								<span>Shopify</span>
+							</div>
+							
+							<div class="youtube-loader d-flex align-items-center align-content-center justify-content-center">
+								<div class="spinner">
+								  <div class="spinner-circle spinner-circle-outer"></div>
+								  <div class="spinner-circle-off spinner-circle-inner"></div>
+								  <div class="spinner-circle spinner-circle-single-1"></div>
+								  <div class="spinner-circle spinner-circle-single-2"></div>
+								</div>
+
+								<div class="loading-videos-channel">Loading products from the store</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+	<ul class="cd-items cd-container" id="cd-items-container"></ul> 
+
+	<div class="cd-quick-view">
+		<div class="cd-slider-wrapper">
+			<ul class="cd-slider"></ul>
+
+			<ul class="cd-slider-navigation">
+				<li><a class="cd-next" href="javascript:void(0)">Prev</a></li>
+				<li><a class="cd-prev" href="javascript:void(0)">Next</a></li>
+			</ul>
+		</div> 
+
+		<div class="cd-item-info">
+			<h2></h2>
+			
+			<p></p>
+
+			<ul class="cd-item-action">
+				<li><a href="javascript:void(0)" class="add-to-cart" target="_blank">Purchase</a></li>					
+				{# <li><a href="javascript:void(0)" class="learn_more" target="_blanck">Learn more</a></li>	 #}
+			</ul> 
+		</div> 
+		<a href="javascript:void(0)" class="cd-close">Close</a>
+	</div> 
+</div>
+
+{% endblock %}
+
+{% block appFooter %}
+
+
+<script src="http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js"></script>
+<script src="assets/dragsport/vendor/velocity/velocity.min.js"></script>
+<script src="assets/jscontrollers/shopify/store.js"></script>
+
+{% endblock %}

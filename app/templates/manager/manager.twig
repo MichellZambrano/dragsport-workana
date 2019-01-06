@@ -1,6 +1,10 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Manage Widgets{% endblock %}
+
 {% block appBody %}
-<!-- Main Header Account -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Manage Widgets' } only %}
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-account"></div>

@@ -1,6 +1,11 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Statistics{% endblock %}
+
+
 {% block appBody %}
-<!-- Main Header Groups -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Statistics' } only %}
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-group"></div>

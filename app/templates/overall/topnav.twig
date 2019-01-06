@@ -3,7 +3,7 @@
 <header class="header" id="site-header">
 
     <div class="page-title">
-        <h6>Profile Page</h6>
+        <h6>{{ page_title }}</h6>
     </div>
 
     <div class="header-content-wrapper">
@@ -458,7 +458,7 @@
                 </div>
                 <a href="profile" class="author-name fn">
                     <div class="author-title">
-                        James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+                        {{ owner_user.first_name }} {{ owner_user.last_name }} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
                     </div>
                     <span class="author-subtitle">SPACE COWBOY</span>
                 </a>
@@ -846,4 +846,4 @@
 </header>
 
 <!-- ... end Responsive Header-BP -->
-<div class="header-spacer"></div>
+<div class="header-spacer header-spacer-small"></div>

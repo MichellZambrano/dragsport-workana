@@ -1,6 +1,11 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Favorit Page Feed{% endblock %}
 
 {% block appBody %}
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Fav Pages Feed' } only %}
+
 <div class="container">
 	<div class="row">
 

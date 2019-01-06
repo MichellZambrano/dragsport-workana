@@ -1,6 +1,10 @@
 {% extends 'overall/layout' %}
+{% block page_title %}Music And Playlist{% endblock %}
+
 {% block appBody %}
-<!-- Main Header Music -->
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Music & Playlist' } only %}
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-music"></div>
