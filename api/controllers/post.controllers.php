@@ -23,6 +23,18 @@ $app->post('/login', function() use($app) {
 });
 
 /**
+    * streamsocial
+    *
+    * @return json
+*/  
+$app->post('/login', function() use($app) {
+    $u = new Model\streamsocial;   
+
+    return $app->json($u->create());   
+});
+
+
+/**
     * Inicio de sesión con facebook
     *
     * @return json
@@ -130,7 +142,7 @@ $app->post('/favpages', function() use($app) {
 
     return $app->json($f->foo());   
 });
-/**
+/**
  * Endpoint para youtube
  *
  * @return json
@@ -140,7 +152,7 @@ $app->post('/youtube', function() use($app) {
 
     return $app->json($y->foo());   
 });
-/**
+/**
  * Endpoint para shopify
  *
  * @return json
