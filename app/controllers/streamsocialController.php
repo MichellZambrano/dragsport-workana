@@ -24,6 +24,7 @@ class streamsocialController extends Controllers implements IControllers {
 
     public function __construct(IRouter $router) {
         parent::__construct($router);
-        
+        $s = new Model\Streamsocial($router);
+        $this->template->display('streamsocial/streamsocial');
     }
 }

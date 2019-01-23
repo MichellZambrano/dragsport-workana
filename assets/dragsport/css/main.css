@@ -921,7 +921,8 @@ Description: "HTML-template"
   position: relative;
   min-height: 100vh; }
   .landing-page .content-bg-wrap {
-    background: url("../img/landing-users.png") repeat 0 0;
+    /*background: url("../img/landing-users.png") repeat 0 0;*/
+    background: url("../img/landing-sports.jpg") repeat 0 0;
     -webkit-animation: sidedownscroll 30s linear infinite;
             animation: sidedownscroll 30s linear infinite; }
     .landing-page .content-bg-wrap:before {
