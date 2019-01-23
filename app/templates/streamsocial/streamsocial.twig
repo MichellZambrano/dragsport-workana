@@ -1,0 +1,163 @@
+{% extends 'overall/layout' %}
+{% block page_title %}Stream Social{% endblock %}
+
+{% block appBody %}
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'Stream Social' } only %}
+
+<div class="main-header">
+	<div class="content-bg-wrap bg-badges"></div>
+	<div class="container">
+		<div class="row">
+			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
+				<div class="main-header-content">
+					<h1>Stream Social</h1>
+					<p>Welcome to your badge collection! Here you’ll find all the badges you can unlock to show on your profile.
+	 Learn how to achive the goal to adquire them and collect them all. Some have leveled tiers and other don’t.
+	 You can challenge your friends to see who gets more and let the fun begin!</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<img class="img-bottom" src="assets/dragsport/img/badges-bottom.png" alt="friends">
+</div>
+
+<!-- ... end Main Header Badges -->
+
+
+
+<!-- Main Content Badges -->
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+			<div class="ui-block filter-search-block">
+
+				<ul class="filter-search d-flex">
+					<li class="social-i">
+						<a href="javascript:filterBy('*')">All</a>
+					</li>
+
+					<li class="social-i">
+						<a href="javascript:filterBy('.facebook')"><i class="fab fa-facebook-f"></i></a>
+					</li>
+
+					<li class="social-i">
+						<a href="javascript:filterBy('.twitter')"><i class="fab fa-twitter"></i></a>
+					</li>
+
+					<li class="social-i">
+						<a href="javascript:filterBy('.google-plus')"><i class="fab fa-google-plus-g"></i></a>
+					</li>
+
+					<li class="social-i">
+						<a href="javascript:filterBy('.pinterest')"><i class="fab fa-pinterest-p"></i></a>
+					</li>
+
+					<li class="social-i">
+						<a href="javascript:filterBy('.soundcloud')"><i class="fab fa-soundcloud"></i></a>
+					</li>
+				</ul>
+
+				<div class="mt-2">
+					<div class="form-search-input">
+						<input type="text" id="searchByText" placeholder="Search post...">
+						<span class="icon-form">
+							<i class="fas fa-search"></i>
+						</span>
+						
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<section class="stream-social-content">
+
+		<div class="grid">
+
+			{% set rand = [
+				[
+					'facebook',
+					'<a href="javascript:void(0)" class="stream-type facebook-color"> <i class="fab fa-facebook-f"></i> </a>'
+				],
+				[
+					'twitter',
+					'<a href="javascript:void(0)" class="stream-type twitter-color"><i class="fab fa-twitter"></i></a>'
+				],
+				[
+					'pinterest',
+					'<a href="javascript:void(0)" class="stream-type pinterest-color"><i class="fab fa-pinterest-p"></i></a>'
+				],
+				[
+					'google-plus',
+					'<a href="javascript:void(0)" class="stream-type google-plus-color"><i class="fab fa-google-plus-g"></i></a>'
+				],
+				[
+					'soundcloud',
+					'<a href="javascript:void(0)" class="stream-type soundcloud-color"><i class="fab fa-soundcloud"></i></a>'
+				]
+			] %}
+
+			{% for i in 1..20 %}
+			{% set r = random(rand) %}
+			<article class="stream-item grid-item {{ r[0] }}">				
+				
+				{{ r[1]|raw }}
+		  		
+		  		<figure>
+		  			<img class="w-100" src="assets/dragsport/stream/{{ random(['1.jpg', '2.jpg', '3.jpg', '4.jpg', '4.png']) }}" alt="">
+		  		</figure>
+		  		<div class="stream-body">
+		  			<h2 class="body-title">How to Style the Comment Form on Your WordPress Website</h2>
+
+		  			<div class="stream-description">
+		  				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		  				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam </p>
+		  			</div>
+
+		  			<div class="stream-footer">
+		  				<span class="time"><i class="far fa-clock"></i> hace 5 minutos.</span>
+		  				<div class="share-social">
+
+		  					<ul class="d-flex mb-0 text-center">
+								<li>
+									<a href="javascript:void(0)"><i class="fab fa-facebook-f"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0)"><i class="fab fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0)"><i class="fab fa-google-plus-g"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0)"><i class="fab fa-pinterest-p"></i></a>
+								</li>
+								<li>
+									<a href="javascript:void(0)"><i class="fab fa-soundcloud"></i></a>
+								</li>
+							</ul>
+
+		  				</div>
+		  			</div>
+		  		</div>
+		  	</article>
+			{% endfor %}
+		  	
+		  	
+		</div>
+	</section>
+</div>
+
+<!-- ... end Main Content Badges -->
+{% endblock %}
+
+{% block appFooter %}
+<script src="assets/dragsport/vendor/isotope/isotope.pkgd.min.js"></script>
+<script src="assets/jscontrollers/streamsocial/stream.js"></script>
+{% endblock %}
