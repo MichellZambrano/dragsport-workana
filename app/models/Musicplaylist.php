@@ -166,8 +166,7 @@ class Musicplaylist extends Models implements IModels {
         
         # Agregamos la playlist
         $spotify_user['pl'] = $user_playlist;
-        
-        dump($spotify_user);
+  
     	# Devolvemos los datos del usuario
     	return $spotify_user;
     }
