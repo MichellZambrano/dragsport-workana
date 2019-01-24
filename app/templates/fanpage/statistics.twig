@@ -1,0 +1,126 @@
+{% extends 'overall/layout' %}
+{% block page_title %}Favourite Page{% endblock %}
+
+{% block appBody %}
+
+{# Header #}
+{% include 'overall/topnav' with {page_title: 'FAVOURITE PAGE' } only %}
+
+{# Menu del perfil #}
+{% include 'overall/fanpage_menu' with { m: m } only %}
+
+<!-- ... end Top Header-Profile -->
+
+<div class="container">
+	<div class="row">
+		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-content">
+					<div class="monthly-indicator">
+						<a href="#" class="btn btn-control bg-breez">
+							<svg class="olymp-stats-arrow"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-stats-arrow"></use></svg>
+						</a>
+						<div class="monthly-count">
+							522.670 New Favourites
+							<span class="indicator positive"> + 78.546</span>
+							<span class="period">Last Month</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-content">
+					<div class="monthly-indicator">
+						<a href="#" class="btn btn-control bg-primary negative">
+							<svg class="olymp-stats-arrow"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-stats-arrow"></use></svg>
+						</a>
+						<div class="monthly-count">
+							208.341 New Visitors
+							<span class="indicator negative"> - 47.052</span>
+							<span class="period">Last Month</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ 
+ <div class="container">
+	<div class="row">
+		<div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12">
+			<div class="ui-block">
+				<div class="ui-block-title">
+					<div class="h6 title">Single Two Bar Graphic</div>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+				</div>
+
+				<div class="ui-block-content">
+
+					<div class="points">
+
+						<span>
+							<span class="statistics-point bg-primary"></span>
+							Statistic 01
+						</span>
+
+						<span>
+							<span class="statistics-point bg-yellow"></span>
+							Statistic 02
+						</span>
+
+					</div>
+
+					<div class="chart-js chart-js-two-bars">
+						<canvas id="two-bars-chart" width="400" height="300"></canvas>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="col col-xl-8 col-lg-8 col-md-12 col-sm-12 col-12">
+			<div class="ui-block responsive-flex">
+				<div class="ui-block-title">
+					<div class="h6 title">Lines Graphic</div>
+
+					<select class="selectpicker form-control without-border">
+						<option value="LY">LAST YEAR (2016)</option>
+						<option value="2">CURRENT YEAR (2017)</option>
+					</select>
+
+					<div class="points align-right">
+
+						<span>
+							<span class="statistics-point bg-blue"></span>
+							FAVOURITES
+						</span>
+
+						<span>
+							<span class="statistics-point bg-breez"></span>
+							VISITORS
+						</span>
+
+					</div>
+
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="assets/dragsport/svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+
+				</div>
+
+				<div class="ui-block-content">
+					<div class="chart-js chart-js-line-stacked">
+						<canvas id="line-stacked-chart" width="730" height="300"></canvas>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- ... end Window-popup Create Photo Album -->
+
+{% endblock %}
