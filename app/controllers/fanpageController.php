@@ -26,6 +26,43 @@ class fanpageController extends Controllers implements IControllers {
         parent::__construct($router,array(
         	'users_logged' => true
         ));
-        $this->template->display('fanpage/fanpage');
+
+        $m = $router->getMethod();
+
+
+        switch ($this->method) {
+        	case 'about':
+        		$this->template->display('fanpage/about', array(
+        			'm' => $m
+        		));
+        	break;
+        	case 'photos':
+        		$this->template->display('fanpage/photos', array(
+        			'm' => $m
+        		));
+        	break;
+        	case 'videos':
+        		$this->template->display('fanpage/videos', array(
+        			'm' => $m
+        		));
+        	break;
+        	case 'statistics':
+        		$this->template->display('fanpage/statistics', array(
+        			'm' => $m
+        		));
+        	break;
+        	case 'events':
+        		$this->template->display('fanpage/events', array(
+        			'm' => $m
+        		));
+        	break;
+
+        	default:
+        		$this->template->display('fanpage/fanpage', array(
+        			'm' => $m
+        		));
+        	break;
+        }
+       
     }
 }
