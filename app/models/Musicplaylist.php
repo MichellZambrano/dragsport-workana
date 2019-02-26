@@ -163,9 +163,11 @@ class Musicplaylist extends Models implements IModels {
         
         # Datos del usuario
         $spotify_user = json_decode( json_encode($api->getUser($social[0]['id_social'])),true );
-        
+
+
         # Agregamos la playlist
         $spotify_user['pl'] = $user_playlist;
+        
   
     	# Devolvemos los datos del usuario
     	return $spotify_user;
